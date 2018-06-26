@@ -1,0 +1,23 @@
+﻿1.表单      
+//2.依赖注入
+//3.动画     
+4.路由守卫 
+//5.路由      
+6.自定义表单控件
+//7.懒加载        
+8.自定义指令    
+//9.rxjs           
+//10.redux
+//可选
+12.ChangeDetection
+13.Observable 的冷和热以及 Subject
+14.import { RouterStoreModule } from '@ngrx/router-store';
+11.effect
+12.flex布局
+
+
+微信首页:
+
+1.搜索
+2.列表栏头不固定,看不到最后一个人的bug
+3.点击一个联系人可以进入

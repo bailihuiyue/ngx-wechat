@@ -1,0 +1,31 @@
+.header{
+    position: fixed;
+    top: 0;
+    width:100%;
+    z-index: 1;
+}
+.icon-header{
+    width: 50px;
+    height: 50px;
+    color: white;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    line-height: 50px;
+    background-position: 10px;
+}
+.icon-header.find{
+    float:right;
+    background-image:url("../../../../assets/images/find.svg");
+}
+.icon-header.add{
+    float:right;
+    background-image:url("../../../../assets/images/add.svg");
+    margin-left: 10px;
+}
+.weixin{
+    float:left;
+    color:white;
+    font-size: 18px;
+    line-height: 50px;
+    margin-left: 10px;
+}

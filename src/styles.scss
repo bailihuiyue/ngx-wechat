@@ -1,0 +1,40 @@
+*{
+    font-family: "Microsoft YaHei";
+}
+.header{
+    width:100%;
+    height:50px;
+    background-color: black;
+}
+.clearfix:after{
+    content:".";
+    clear:both;
+    display:block;
+    height:0;
+    overflow:hidden;
+    visibility:hidden;
+}
+.grey-font{
+    color: #BABABA;
+}
+.font-16{
+    font-size: 16px;
+}
+.font-14{
+    font-size: 14px;
+}
+.font-18{
+    font-size: 18px;
+}
+.bold{
+    font-weight: bold;
+}
+.index-pages-content{
+    width:100%;
+    position: absolute;
+    top: 50px;
+    margin-bottom: 65px;
+}
+body{
+    overflow-x: hidden;
+}

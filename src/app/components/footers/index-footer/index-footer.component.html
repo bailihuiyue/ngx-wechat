@@ -1,0 +1,26 @@
+<div class="footer">
+  <a class="page" routerLink="/index">
+    <div>
+      <img src="/assets/images/message.svg" alt="">
+    </div>
+    <div class="grey-font" [ngStyle]="{'color':indexPage === 'INDEX' ? '#0ABA07' : '' }">微信</div>
+  </a>
+  <a class="page" routerLink="/address">
+    <div>
+      <img src="/assets/images/address.svg" alt="">
+    </div>
+    <div class="grey-font" [ngStyle]="{'color':indexPage === 'ADDRESS' ? '#0ABA07' : '' }">通讯录</div>
+  </a>
+  <a class="page">
+    <div>
+      <img src="/assets/images/discovery.svg" alt="">
+    </div>
+    <div class="grey-font">发现</div>
+  </a>
+  <a class="page">
+    <div>
+      <img src="/assets/images/settings.svg" alt="">
+    </div>
+    <div class="grey-font">我</div>
+  </a>
+</div>
