@@ -6,7 +6,7 @@ import {fromPromise} from 'rxjs/internal/Observable/fromPromise'
 @Injectable({
   providedIn: 'root'
 })
-export class usersService {
+export class UsersService {
 
   constructor(private http: Http) { }
 

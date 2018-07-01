@@ -17,7 +17,7 @@ import { currentPageReducer } from './redux/currentPage.redux';
 @NgModule({
   declarations: [
     AppComponent,
-    ...Pages,
+    ...Pages
   ],
   imports: [
     BrowserModule,

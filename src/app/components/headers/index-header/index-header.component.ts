@@ -11,5 +11,7 @@ export class IndexHeaderComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  changeBlack(e){
+    e.target.style.backgroundColor="black";
+  }
 }

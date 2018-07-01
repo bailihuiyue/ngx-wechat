@@ -1,0 +1,72 @@
+.search-page{
+  background-color: #F2F2F2; 
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  .search-header{
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    .back{
+      width: 15%;
+      float: left;
+      height: 41px;
+      text-align: center;
+      img{
+        height: 80%;
+      }
+    }
+    .search{
+        width: 85%;
+        float: right;
+        input{
+          width: 100%;
+          border: none;
+          height: 35px;
+          border-bottom: 1px solid #29B228;
+          font-size: 24px;
+          outline: none;
+          padding-left: 5px;
+          line-height: 30px;
+          padding-bottom: 5px;
+          background-color: #F2F2F2; 
+          background-image: url("/assets/images/microphone.png");
+          background-repeat: no-repeat;
+          background-size: 40px;
+          background-position: 96%;
+        }
+        input::-webkit-input-placeholder{
+          color:#D4D4D4;;
+        }
+        input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+            color:#D4D4D4;;
+        }
+        input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+            color:#D4D4D4;;
+        }
+        input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+          color:#D4D4D4;
+        }
+      }
+  } 
+  .body{
+      text-align: center;
+      margin-top: 50px;
+      .tip{
+        width: 100%;
+        font-size: 22px;
+        color: #B6B6B6;
+      }
+      .row{
+        margin-top: 10px;
+        .col-4{
+          float: left;
+          width: 33.333%;
+          color:#29B228;
+          text-align: center;
+          padding: 20px 0;
+          font-size: 20px;
+        }
+     }
+  }
+}

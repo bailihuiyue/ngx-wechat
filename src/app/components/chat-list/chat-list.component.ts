@@ -1,5 +1,5 @@
 import { Component, OnInit,HostBinding } from '@angular/core';
-import { usersService } from '../../services/get-users.service';
+import { UsersService } from '../../services/get-users.service';
 import { Observable } from 'rxjs';
 import { routeAnimation } from "../../anim/routeAnimation";
 
@@ -12,7 +12,7 @@ import { routeAnimation } from "../../anim/routeAnimation";
 export class ChatListComponent implements OnInit {
 
   userList$:Observable<any> ;
-  constructor(private usersService$: usersService) { }
+  constructor(private usersService$: UsersService) { }
 
   ngOnInit() {
     this.userList$ = this.usersService$.getUsers()
