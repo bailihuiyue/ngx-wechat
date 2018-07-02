@@ -1,0 +1,36 @@
+.index-menu{
+    width: 50%;
+    position: absolute;
+    z-index: 2;
+    background-color: #1D1C1F;
+    right: 10px;
+    top: 50px;
+    list-style-type:none;
+    color:#fff;
+    li{
+        border-bottom: 1px solid black;
+        padding-left: 40px;
+        height: 40px;
+        line-height: 40px;
+
+        background-position: 5px 9px;
+        background-size: 25px;
+        background-repeat: no-repeat;
+    }
+    .icon-chat{
+        background-image:url("../../../../assets/images/headers/chat.png");
+    }
+    .icon-add_friend{
+        background-image:url("../../../../assets/images/headers/add_friend.png");
+    }
+    .icon-sao{
+        background-image:url("../../../../assets/images/headers/sao.png");
+    }
+    .icon-recevie{
+        background-image:url("../../../../assets/images/headers/recevie.png");
+    }
+    .icon-help{
+        background-image:url("../../../../assets/images/headers/help.png");
+    }
+
+}

@@ -13,11 +13,13 @@ import Pages from './pages/index';
 import Services from './services/index';
 
 import { currentPageReducer } from './redux/currentPage.redux';
+import { IndexMenuComponent } from './components/headers/index-menu/index-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ...Pages
+    ...Pages,
+    IndexMenuComponent
   ],
   imports: [
     BrowserModule,
