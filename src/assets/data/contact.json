@@ -1,0 +1,94 @@
+{
+    "A": [
+        {
+            "avatar": "./assets/images/avatar/1.jpg",
+            "name": "ant"
+        },
+        {
+            "avatar": "./assets/images/avatar/8.jpg",
+            "name": "阿姨"
+        }
+    ],
+    "B": [
+        {
+            "avatar": "./assets/images/avatar/2.jpg",
+            "name": "白白"
+        },
+        {
+            "avatar": "./assets/images/avatar/5.jpg",
+            "name": "爸爸的爸爸叫什么"
+        }
+    ],
+    "C": [
+        {
+            "avatar": "./assets/images/avatar/3.jpg",
+            "name": "陈小春"
+        },
+        {
+            "avatar": "./assets/images/avatar/6.jpg",
+            "name": "蔡卫卫"
+        }
+    ],
+    "D": [
+        {
+            "avatar": "./assets/images/avatar/4.jpg",
+            "name": "大神"
+        },
+        {
+            "avatar": "./assets/images/avatar/10.jpg",
+            "name": "代吉星"
+        }
+    ],
+    "E": [
+        {
+            "avatar": "./assets/images/avatar/5.jpg",
+            "name": "二哥"
+        }
+    ],
+    "F": [
+        {
+            "avatar": "./assets/images/avatar/6.jpg",
+            "name": "福特"
+        }
+    ],
+    "G": [
+        {
+            "avatar": "./assets/images/avatar/7.jpg",
+            "name": "盖世"
+        }
+    ],
+    "H": [
+        {
+            "avatar": "./assets/images/avatar/8.jpg",
+            "name": "好命先生"
+        },
+        {
+            "avatar": "./assets/images/avatar/8.jpg",
+            "name": "韩立"
+        }
+    ],
+    "J": [
+        {
+            "avatar": "./assets/images/avatar/9.jpg",
+            "name": "江俊杰"
+        }
+    ],
+    "K": [
+        {
+            "avatar": "./assets/images/avatar/1.jpg",
+            "name": "科技"
+        }
+    ],
+    "L": [
+        {
+            "avatar": "./assets/images/avatar/2.jpg",
+            "name": "亮亮"
+        }
+    ],
+    "Z": [
+        {
+            "avatar": "./assets/images/avatar/2.jpg",
+            "name": "朱元璋"
+        }
+    ]
+}

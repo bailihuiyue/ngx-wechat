@@ -1,6 +1,6 @@
-import { UsersService } from "./get-users.service"
-//import {RouteHistoryService}from './route-history.service';
+import { UsersService } from "./get-users.service";
+import { ContactsService } from "./contacts.service";
 export default [
     UsersService,
-    //RouteHistoryService
+    ContactsService
 ];

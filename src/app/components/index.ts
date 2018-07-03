@@ -5,13 +5,14 @@ import { ChatListComponent } from './chat-list/chat-list.component';
 import { MainComponent } from './main/main.component';
 import { IndexHeaderComponent } from './headers/index-header/index-header.component';
 import { IndexFooterComponent } from './footers/index-footer/index-footer.component';
-
+import { ContactComponent } from './contact-list/contact-list.component';
 @NgModule({
   declarations: [
     ChatListComponent,
     MainComponent,
     IndexHeaderComponent,
-    IndexFooterComponent
+    IndexFooterComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +22,8 @@ import { IndexFooterComponent } from './footers/index-footer/index-footer.compon
     ChatListComponent,
     MainComponent,
     IndexHeaderComponent,
-    IndexFooterComponent
+    IndexFooterComponent,
+    ContactComponent
   ]
 })
 export class SharedModule { }
