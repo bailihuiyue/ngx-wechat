@@ -3,7 +3,8 @@ import { trigger, stagger, transition, style, animate, query, state } from '@ang
 export const indexMenuAnimation = trigger('indexMenuAnim', [
   state('void', style({ 
     'opacity':0,
-    "transform": "scale(0)"
+    "transform": "scale(0)",
+    "transform-origin":"top right"
    })),
    state(':enter', style({ 
     'opacity':1,
