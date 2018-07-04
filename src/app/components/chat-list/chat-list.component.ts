@@ -17,4 +17,11 @@ export class ChatListComponent implements OnInit {
   ngOnInit() {
     this.userList$ = this.usersService$.getUsers()
   }
+
+  changeBackground(e){
+    e.currentTarget.style.backgroundColor="#F0F0F0";
+  }
+  backgroundNormal(e){
+    e.currentTarget.style.backgroundColor="#FFFFFF";
+  }
 }
