@@ -1,5 +1,6 @@
 *{
     font-family: "Microsoft YaHei";
+    box-sizing: border-box;
 }
 a:active {color: black}
 a:visited {color: black }
@@ -18,6 +19,9 @@ a:visited {color: black }
 }
 .grey-font{
     color: #BABABA;
+}
+.black-font{
+    color: #000;
 }
 .font-16{
     font-size: 16px;

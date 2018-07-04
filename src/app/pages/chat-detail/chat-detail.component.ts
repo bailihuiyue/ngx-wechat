@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class ChatDetailComponent implements OnInit {
 
   constructor() { }
-
+  imgSrc:String="../../../assets/images/headers/back.png";
+  href:String="back";
   ngOnInit() {
   }
 

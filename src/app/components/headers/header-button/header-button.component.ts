@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, HostListener } from '@angular/core';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-header-button',
@@ -7,15 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderButtonComponent implements OnInit {
 
-  constructor() { }
+  @Input() imgSrc: string;
+  @Input() href: string;
+  @HostListener('click') onClick() {
+    if (this.href === "back") {
+      window.history.back();
+    }else{
+      this.router.navigateByUrl(this.href); 
+    }
+  }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  changeBlack(e){
-    e.target.style.backgroundColor="black";
+  changeBlack(e) {
+    e.currentTarget.style.backgroundColor = "black";
   }
-  changeNormal(e){
-    e.target.style.backgroundColor="#1D1C1F";
+  changeNormal(e) {
+    e.currentTarget.style.backgroundColor = "#1D1C1F";
   }
 }
