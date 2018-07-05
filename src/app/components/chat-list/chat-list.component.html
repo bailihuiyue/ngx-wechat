@@ -1,4 +1,4 @@
-<div class="chat-list index-pages-content" [@routeAnim]='void'>
+<div class="chat-list index-pages-content">
     <a *ngFor="let user of userList$ | async; let i = index;" 
     class="chat-item" 
     (touchstart)="changeBackground($event)" 
