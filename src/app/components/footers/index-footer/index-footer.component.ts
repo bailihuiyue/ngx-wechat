@@ -17,7 +17,6 @@ export class IndexFooterComponent implements OnInit {
 
   ngOnInit() {
     this.indexPage = this.routeInfo.snapshot["data"]["state"];
-    this.currentPage$ = this.store.select('currentPageReducer');
     this.store.dispatch({ type: this.indexPage});
   }
 

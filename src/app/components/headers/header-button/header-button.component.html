@@ -1,5 +1,6 @@
 <div class="header-button" 
 (touchstart)="changeBlack($event)" 
-(touchend)="changeNormal($event)">
+(touchend)="changeNormal($event)"
+[ngStyle]="style">
     <img [src]="imgSrc"/>
 </div>

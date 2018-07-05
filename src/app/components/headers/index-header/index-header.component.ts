@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
+
 @Component({
   selector: 'app-index-header',
   templateUrl: './index-header.component.html',
@@ -11,6 +12,14 @@ export class IndexHeaderComponent implements OnInit {
   
   is_index:Boolean=true;
 
+  imgAdd:string="../../../assets/images/add.svg";
+  addHref:string="showMenu";
+  addStyle={'position':'absolute','top':'0','right':'0px'};
+ 
+
+  imgSearch:string="../../../assets/images/find.svg";
+  SearchHref:string="/search";
+  SearchStyle={'position':'absolute','top':'0','right':'55px'};
   ngOnInit() {
   }
   changeBlack(e){
@@ -27,6 +36,5 @@ export class IndexHeaderComponent implements OnInit {
       this.router.navigateByUrl("/index"); 
       this.is_index=true;
     }
-    
   }
 }

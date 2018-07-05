@@ -1,6 +1,8 @@
 <div class="header">
   <div class="weixin">微信</div>
-  <a class="icon-header add" (click)="showMenu()" (touchstart)="changeBlack($event)" (touchend)="changeNormal($event)"></a>
+  <app-header-button [imgSrc]="imgAdd" [href]="addHref" [style]="addStyle"></app-header-button>
+  <app-header-button [imgSrc]="imgSearch" [href]="SearchHref" [style]="SearchStyle"></app-header-button>
+  <app-index-menu></app-index-menu>
   <a class="icon-header find" routerLink="/search" (mousedown)="changeBlack($event)" (touchstart)="changeBlack($event)"></a>
   <router-outlet></router-outlet>
 </div>

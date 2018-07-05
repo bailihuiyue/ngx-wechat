@@ -8,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class ChatDetailComponent implements OnInit {
 
   constructor() { }
-  imgSrc:String="../../../assets/images/headers/back.png";
-  href:String="back";
+  imgBack:string="../../../assets/images/headers/back.png";
+  backHref:string="back";
+
+  imgMore:string="../../../assets/images/headers/more.png";
+  hrefMore:string="/more";
+  styleMore={'position':'absolute','top':'0','right':'0px'};
   ngOnInit() {
   }
 
