@@ -1,0 +1,11 @@
+//使用代理方法
+//启动命令:ng serve --proxy-config proxy.conf.json
+{
+    "/api/*": {
+        "target": "http://192.168.71.146:81",
+        "secure": false,
+        "pathRewrite": {
+            "/api": ""
+        }
+    }
+}

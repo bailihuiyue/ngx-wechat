@@ -1,23 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import {currentPageReducer, CurrentPage} from '../../../redux/currentPage.redux';
-
+import { currentPageReducer, CurrentPage } from '../../../redux/currentPage.redux';
+import { Store } from '@ngrx/store';
 @Component({
   selector: 'app-index-footer',
   templateUrl: './index-footer.component.html',
   styleUrls: ['./index-footer.component.scss']
 })
 export class IndexFooterComponent implements OnInit {
-
   indexPage:string="";
-  currentPage$:Observable<string>;
-  constructor(private routeInfo:ActivatedRoute,private store: Store<number>) { }
+  constructor(private store: Store<number>) { }
 
   ngOnInit() {
-    this.indexPage = this.routeInfo.snapshot["data"]["state"];
-    this.store.dispatch({ type: this.indexPage});
+    this.store.select('DisplayIndexMenuReducer').subscribe(data => this.indexPage = data);
   }
 
 }

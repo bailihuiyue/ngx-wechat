@@ -1,14 +1,14 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
-import { leftSlideAnimation, trigger2 } from '../../anim/leftSlide';
+import { horLeft } from '../../anim/horScroll';
 @Component({
   selector: 'app-chat-detail',
   templateUrl: './chat-detail.component.html',
   styleUrls: ['./chat-detail.component.scss'],
-  animations: [leftSlideAnimation, trigger2]
+  animations: [horLeft],
+  host: { '[@horLeft]': '' }
 })
 export class ChatDetailComponent implements OnInit {
 
-  @HostBinding('@leftSlideAnim') leftSlideAnim = "void";
   constructor() { }
   imgBack: string = "../../../assets/images/headers/back.png";
   backHref: string = "/index";
