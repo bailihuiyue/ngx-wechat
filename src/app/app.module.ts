@@ -8,12 +8,13 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 
-import{SharedModule} from './components/index'
+import { SharedModule } from './components/index';
+import { AddressModule } from './pages/address/address.module'
 import Pages from './pages/index';
 import Services from './services/index';
 
 import { currentPageReducer } from './redux/currentPage.redux';
-import {DisplayIndexMenuReducer  } from './redux/indexMenu.redux';
+import { DisplayIndexMenuReducer } from './redux/indexMenu.redux';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,9 +26,10 @@ import {DisplayIndexMenuReducer  } from './redux/indexMenu.redux';
     HttpModule,
     WeUiModule.forRoot(),
     BrowserAnimationsModule,
-    StoreModule.forRoot({ currentPageReducer,DisplayIndexMenuReducer }),
+    StoreModule.forRoot({ currentPageReducer, DisplayIndexMenuReducer }),
     StoreDevtoolsModule.instrument(),
-    SharedModule
+    SharedModule,
+    AddressModule
   ],
   providers: [
     ...Services

@@ -19,7 +19,7 @@ const router: Routes = [
     },
     { path: 'search', loadChildren: './pages/search/search.module#SearchModule', data: { state: 'SEARCH' } },
     { path: 'userdetail', loadChildren: './pages/chat-detail/chat-detail.module#ChatDetailModule', data: { state: 'CHAT_DETAIL' } },
-    { path: '**', component: IndexPageComponent, data: { state: 'noMatch' } }
+    { path: '**', redirectTo: '/index/chatList', data: { state: 'noMatch' } }
 ];
 
 

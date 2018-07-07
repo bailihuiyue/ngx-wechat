@@ -18,9 +18,12 @@ export class IndexPageComponent implements OnInit {
   indexPage: string = "";
   constructor(private router: Router,private routeInfo: ActivatedRoute, private store: Store<number>) { }
   ngOnInit() {
-    this.routeInfo.url.subscribe(() => {
-      this.indexPage = this.routeInfo.snapshot.firstChild.data.state;
-      this.store.dispatch({ type: this.indexPage });
-     });
+    //练习redux的代码,没什么用
+    // this.store.select('currentPageReducer');
+    // this.routeInfo.url.subscribe(() => {
+    //   this.indexPage = this.routeInfo.snapshot.firstChild?this.routeInfo.snapshot.firstChild.data.state:"";
+    //   this.store.dispatch({ type: this.indexPage });
+    //   console.log(this.indexPage);
+    //  });
   }
 }

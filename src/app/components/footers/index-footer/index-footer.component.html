@@ -1,23 +1,23 @@
 <div class="footer">
-  <a class="page" routerLink="/index/chatList">
+  <a class="page" (click)="showPage('chatList',$event)">
     <div>
       <img src="/assets/images/message.svg" alt="">
     </div>
-    <div class="grey-font" [ngStyle]="{'color':indexPage === 'INDEX' ? '#0ABA07' : '' }">微信</div>
+    <div class="grey-font" [ngStyle]="{'color':indexPage === 'chatList' ? '#0ABA07' : '' }">微信</div>
   </a>
-  <a class="page" routerLink="/index/address">
+  <a class="page" (click)="showPage('address',$event)">
     <div>
       <img src="/assets/images/address.svg" alt="">
     </div>
-    <div class="grey-font" [ngStyle]="{'color':indexPage === 'ADDRESS' ? '#0ABA07' : '' }">通讯录</div>
+    <div class="grey-font" [ngStyle]="{'color':indexPage === 'address' ? '#0ABA07' : '' }">通讯录</div>
   </a>
-  <a class="page">
+  <a class="page" (click)="showPage('find',$event)">
     <div>
-      <img src="/assets/images/discovery.svg" alt="">
+      <img src="/assets/images/discovery.svg"  alt="">
     </div>
     <div class="grey-font">发现</div>
   </a>
-  <a class="page">
+  <a class="page" (click)="showPage('my',$event)">
     <div>
       <img src="/assets/images/settings.svg" alt="">
     </div>
