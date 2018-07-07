@@ -33,3 +33,34 @@ export const horRight = trigger('horRight', [
         animate('500ms', style({ transform: 'translateX(100%)' }))
     ])
 ]);
+
+export const rightInLeftLeave = trigger('rightInLeftLeave', [
+    state('void', style({ position: "absolute", 'width': '100%', 'height': '100%' })),
+    // * 表示任何状态
+    state('*', style({ position: "absolute", 'width': '100%', 'height': '100%' })),
+    // 进场动画
+    transition(':enter', [
+        style({ transform: 'translate(-100%)' }),
+        animate('200ms', style({ transform: 'translateX(0)' }))
+    ]),
+    // 出场动画
+    transition(':leave', [
+        style({ transform: 'translateX(0)' }),
+        animate('200ms', style({ transform: 'translateX(-100%)' }))
+    ])
+]);
+export const leftInRightLeave = trigger('leftInRightLeave', [
+    state('void', style({ position: "absolute", 'width': '100%', 'height': '100%' })),
+    // * 表示任何状态
+    state('*', style({ position: "absolute", 'width': '100%', 'height': '100%' })),
+    // 进场动画
+    transition(':enter', [
+        style({ transform: 'translate(100%)' }),
+        animate('200ms', style({ transform: 'translateX(0)' }))
+    ]),
+    // 出场动画
+    transition(':leave', [
+        style({ transform: 'translateX(0)' }),
+        animate('200ms', style({ transform: 'translateX(100%)' }))
+    ])
+]);

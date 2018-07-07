@@ -1,11 +1,11 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
-import { horLeft } from '../../anim/horScroll';
+import { leftInRightLeave } from '../../anim/translateX';
 @Component({
   selector: 'app-chat-detail',
   templateUrl: './chat-detail.component.html',
   styleUrls: ['./chat-detail.component.scss'],
-  animations: [horLeft],
-  host: { '[@horLeft]': '' }
+  animations: [leftInRightLeave],
+  host: { '[@leftInRightLeave]': '' }
 })
 export class ChatDetailComponent implements OnInit {
 

@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../services/get-users.service';
 import { Observable } from 'rxjs';
-
+import { horLeft, horRight,rightInLeftLeave } from '../../anim/translateX';
 
 @Component({
   selector: 'app-chat-list',
   templateUrl: './chat-list.component.html',
-  styleUrls: ['./chat-list.component.scss']
+  styleUrls: ['./chat-list.component.scss'],
+  animations: [rightInLeftLeave],
+  host: { '[@rightInLeftLeave]': '' }
 })
 export class ChatListComponent implements OnInit {
 

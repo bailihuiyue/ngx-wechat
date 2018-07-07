@@ -1,4 +1,8 @@
-<div>
+<div [@fadeIn]="">
+    <!-- TODO:目前还没有找到可以在 router-outlet上添加动画的方法,
+        这样就不需要在每个页面都加入动画了
+        估计应该使用query方法,但是不管用
+    -->
     <app-index-header></app-index-header>
     <router-outlet></router-outlet>
     <app-index-footer></app-index-footer>

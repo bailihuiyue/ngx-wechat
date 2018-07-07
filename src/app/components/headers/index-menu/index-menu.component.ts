@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { indexMenuAnimation } from "../../../anim/indexMenu";
+import { scaleTopRightAnimation } from "../../../anim/scale";
 import { Store } from '@ngrx/store';
 import { DisplayIndexMenu } from '../../../redux/indexMenu.redux';
 @Component({
   selector: 'app-index-menu',
   templateUrl: './index-menu.component.html',
   styleUrls: ['./index-menu.component.scss'],
-  animations: [indexMenuAnimation]
+  animations: [scaleTopRightAnimation]
 })
 export class IndexMenuComponent implements OnInit {
 

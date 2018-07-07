@@ -39,7 +39,8 @@ a:visited {color: black }
     width:100%;
     position: absolute;
     top: 50px;
-    margin-bottom: 65px;
+    bottom: 65px;
+    overflow: auto;
 }
 body{
     overflow-x: hidden;

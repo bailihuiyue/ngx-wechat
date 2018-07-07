@@ -1,16 +1,15 @@
-<div class="chat-list index-pages-content">
-    <a *ngFor="let user of userList$ | async; let i = index;" 
-    class="chat-item" 
-    (touchstart)="changeBackground($event)" 
-    (touchend)="backgroundNormal($event)"
-    routerLink="/userdetail">
-        <div class="clearfix">
-            <img src="{{user.avatar}}" alt="">
-            <div class="chat-row">
-                <div class="font-18 bold black-font">{{user.name}}</div>
-                <div class="grey-font font-14">{{user.text}}</div>
+<div>
+    <div class="chat-list index-pages-content">
+        <a *ngFor="let user of userList$ | async; let i = index;" class="chat-item" (touchstart)="changeBackground($event)" (touchend)="backgroundNormal($event)"
+            routerLink="/userdetail">
+            <div class="clearfix">
+                <img src="{{user.avatar}}" alt="">
+                <div class="chat-row">
+                    <div class="font-18 bold black-font">{{user.name}}</div>
+                    <div class="grey-font font-14">{{user.text}}</div>
+                </div>
+                <div class="chat-time grey-font">{{user.time}}</div>
             </div>
-            <div class="chat-time grey-font">{{user.time}}</div>
-        </div>
-    </a>
+        </a>
+    </div>
 </div>

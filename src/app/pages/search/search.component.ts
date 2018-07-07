@@ -2,10 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { fadeIn } from '../../anim/fade';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+  styleUrls: ['./search.component.scss'],
+  animations: [fadeIn],
+  host: { '[@fadeIn]': '' }
 })
 export class SearchComponent implements OnInit {
   currentPage$:Observable<string>;

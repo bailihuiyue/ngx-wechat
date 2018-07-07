@@ -1,6 +1,6 @@
 import { trigger, stagger, transition, style, animate, query, state } from '@angular/animations';
 
-export const indexMenuAnimation = trigger('indexMenuAnim', [
+export const scaleTopRightAnimation = trigger('scaleTPAnim', [
   state('void', style({ 
     'opacity':0,
     "transform": "scale(0)",
