@@ -5,9 +5,17 @@
         <app-header-button [imgSrc]="imgMore" [href]="hrefMore" [style]="styleMore"></app-header-button>
         <div class="body">
             <ul>
-                <ng-container *ngFor="let i of chatDetail;let n=index;">
+                <ng-container *ngFor="let chats of chatBody;let n=index;">
                     <li>
-                        {{i}} 
+                        <div class="center-text">{{chatTime[n]}}</div>
+                        <ul class="">
+                            <ng-container *ngFor="let msg of chats">
+                                <li *ngIf="msg[0]==='from'; else elseBlock" class="clearfix left-msg">{{msg[1]}}</li>
+                                <ng-template #elseBlock>
+                                    <li class="clearfix right-msg">{{msg[1]}}</li>
+                                </ng-template>
+                            </ng-container>
+                        </ul>
                     </li>
                 </ng-container>
             </ul>

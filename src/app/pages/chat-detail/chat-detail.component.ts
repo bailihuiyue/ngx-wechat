@@ -21,22 +21,28 @@ export class ChatDetailComponent implements OnInit {
 
   id: string = "";
   uname: string = "";
-  chatDetail: object = {};
+  chatTime: Array<string> = [];
+  chatBody: any = [];
+
+
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: Params) => {
       this.id = params['id'];
       this.uname = params['uname'];
       //userService取值为异步取值,所以在这行下面写log()打印出来的只能是undefined
       this.userService$.getChatDetail().subscribe(data => {
+        let chatDetail: object = {};
         if (data[this.id]) {
-          this.chatDetail = data[this.id];
+          chatDetail = data[this.id];
         } else {
-          this.chatDetail = data['default'];
+          chatDetail = data['default'];
         }
-        console.log(this.chatDetail);
+        for (let chat in chatDetail) {
+          this.chatTime.push(chat);
+          this.chatBody.push(chatDetail[chat]);
+        }
+        //console.log(this.chatDetail);
       });
     });
-
   }
-
 }
