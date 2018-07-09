@@ -16,4 +16,12 @@ export class UsersService {
         catchError(error => of('getUsers error:'+ error))
       );
   }
+
+  getChatDetail(): Observable<any> {
+    return this.http.
+      get("/assets/data/chatDetail.json").pipe(
+        map(res => res.json()),
+        catchError(error => of('getChatDetail error:' + error))
+      );
+  }
 }

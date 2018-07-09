@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { IndexPageComponent } from "./pages/index-page/index-page.component";
 import { IndexMenuComponent } from "./components/headers/index-menu/index-menu.component";
 import { ChatListComponent } from "./components/chat-list/chat-list.component";
+import { NoMatchComponent } from './pages/no-match/no-match.component';
 const router: Routes = [
     { path: '', redirectTo: '/index/chatList', pathMatch: 'full' },
     { path: 'index', redirectTo: '/index/chatList', pathMatch: 'full' },
@@ -18,8 +19,8 @@ const router: Routes = [
         ]
     },
     { path: 'search', loadChildren: './pages/search/search.module#SearchModule', data: { state: 'SEARCH' } },
-    { path: 'userdetail', loadChildren: './pages/chat-detail/chat-detail.module#ChatDetailModule', data: { state: 'CHAT_DETAIL' } },
-    { path: '**', redirectTo: '/index/chatList', data: { state: 'noMatch' } }
+    { path: 'userdetail/:id/:uname', loadChildren: './pages/chat-detail/chat-detail.module#ChatDetailModule', data: { state: 'CHAT_DETAIL' } },
+    { path: '**', component: NoMatchComponent, data: { state: 'noMatch' } }
 ];
 
 

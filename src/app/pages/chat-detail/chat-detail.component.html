@@ -1,6 +1,16 @@
-<div>
+<div class="chat-detail">
     <div class="header">
         <app-header-button [imgSrc]="imgBack" [href]="backHref"></app-header-button>
+        <div class="uname">{{uname}}</div>
         <app-header-button [imgSrc]="imgMore" [href]="hrefMore" [style]="styleMore"></app-header-button>
+        <div class="body">
+            <ul>
+                <ng-container *ngFor="let i of chatDetail;let n=index;">
+                    <li>
+                        {{i}} 
+                    </li>
+                </ng-container>
+            </ul>
+        </div>
     </div>
 </div>
