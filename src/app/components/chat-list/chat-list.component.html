@@ -1,7 +1,7 @@
 <div>
     <div class="chat-list index-pages-content">
-        <a *ngFor="let user of userList$ | async; let i = index;" class="chat-item" (touchstart)="changeBackground($event)" (touchend)="backgroundNormal($event)" 
-        [routerLink]="['/userdetail',user.id,user.name,user.avatar]">
+        <a *ngFor="let user of userList$ | async; let i = index;" class="chat-item" (touchstart)="changeBackground($event)" (touchend)="backgroundNormal($event)"
+            [routerLink]="['/userdetail',user.id,user.name,user.avatar]">
             <div class="clearfix">
                 <img src="{{imgUrl}}{{user.avatar}}" alt="">
                 <div class="chat-row">

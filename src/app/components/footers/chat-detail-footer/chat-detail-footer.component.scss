@@ -1,6 +1,51 @@
+@import '../../../../define.scss';
 .chat-detail-footer{
     width: 100%;
     position: absolute;
     bottom: 0;
     z-index: 1;
+    border-top: 1px solid #D9D9D9;
+    height: 50px;
+    .voice,.face,.more{
+        width: 35px;
+        height: 35px;
+        margin-top: 7.5px;
+        margin-left:10px;
+        border: 1px solid $wechat-foot-border;
+        border-radius: 50%;
+        float: left;
+        img{
+            width: 100%;
+            padding: 5px;
+        }
+    }
+    .text{
+        float: left;
+        input{
+            border: none;
+            border-bottom: 1px solid $wechat-foot-border;
+            line-height: 35px;
+            height: 35px;
+            margin-top: 7.5px;
+            margin-left:10px;
+            font-size: 18px;
+        }
+        input:focus{
+            outline: none;
+            border-bottom: 1px solid $wechat-green;
+        }
+    }
+    .face{
+        border: none;
+        float:right	;
+        width: 40px;
+        margin-top: 6px;
+        img{
+            padding: 0;
+        }
+    }
+    .more{
+        float:right	;
+        margin-right: 10px;
+    }
 }

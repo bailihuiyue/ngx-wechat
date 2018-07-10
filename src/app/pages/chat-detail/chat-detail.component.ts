@@ -41,7 +41,7 @@ export class ChatDetailComponent implements OnInit {
         }
         for (let chat in chatDetail) {
           //TODO:info:对应没有时间的聊天内容
-          if(!data['default']){
+          if(data[this.id]){
             this.chatTime.push(chat);
           }
           this.chatBody.push(chatDetail[chat]);
