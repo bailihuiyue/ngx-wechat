@@ -19,14 +19,16 @@
             ["to","嘛"],
             ["from","借我点钱"],
             ["to","哦"],
-            ["from","../images/emoji/thanks.gif"]
+            ["from","./assets/images/emoji/thanks.gif"]
         ]
     },
-    "default":[
-        ["from","Hello,这是一个使用angular6开发的微信SPA"],
-        ["to","纯自学主要使用谷歌+慕课网视频总结而成"],
-        ["from","目的是帮助学习使用angular的人快速上手"],
-        ["to","里面有很多不好百度的内容,我已加上注释"],
-        ["from","如果对你有用,请为我点上一颗星"]
-    ]
+    "default":{
+        "now":[
+            ["from","Hello,这是一个使用angular6开发的微信SPA"],
+            ["to","纯自学主要使用谷歌+慕课网视频总结而成"],
+            ["from","目的是帮助学习使用angular的人快速上手"],
+            ["to","里面有很多不好百度的内容,我已加上注释"],
+            ["from","如果对你有用,请为我点上一颗星"]
+        ]
+    }
 }

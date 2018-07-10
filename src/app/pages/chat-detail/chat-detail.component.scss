@@ -1,3 +1,4 @@
+@import '../../../define.scss';
 .chat-detail{
     .header{
         .uname{
@@ -10,11 +11,73 @@
         }  
     }
     .body{
-        .left-msg{
+        position: absolute;
+        top: 50px;
+        bottom: 50px;
+        overflow-y: auto;
+        .msg{
+            padding: 10px;
             text-align: left;
+            border-radius: 5px;
+            margin: 10px auto;
+            min-width: 0;
+            max-width: 65%;
         }
-        .right-msg{
-            text-align: right;
+        .avatar{
+            width: 50px;
+            margin: 10px;
+        }
+        .left{
+            .msg{
+                float:left;
+                background-color:#fff;
+                position: relative;
+                .emoji{
+                    width: 100px;
+                }
+            }
+            .avatar{
+                float:left;
+            }
+            .msg:after {
+                position: absolute;
+                content: "";
+                left: -7px;
+                top: 10px;
+                border-top: 10px solid transparent;
+                border-right: 10px solid #fff;
+                border-bottom: 10px solid transparent;
+            }
+        }
+        .right{
+            .msg{
+                float: right;
+                background-color: $wechat-green;
+                position: relative;
+            }
+            .msg:after {
+                position: absolute;
+                content: "";
+                right: -7px;
+                top: 10px;
+                border-left: 10px solid $wechat-green;
+                border-top: 10px solid transparent ;
+                border-bottom: 10px solid transparent;
+            }
+            .avatar{
+                float: right;
+            }
+        }
+        .time{
+            text-align: center;
+            background-color: #D5D5D5;
+            color: #fff;
+            display: inline-block;
+            border-radius: 5px;
+            margin:15px auto 10px auto;
+            padding: 5px;
+            font-size: 14px;
+            opacity: 0.8;
         }
     }
 }

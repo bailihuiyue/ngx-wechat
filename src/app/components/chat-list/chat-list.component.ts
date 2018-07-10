@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { UsersService } from '../../services/get-users.service';
 import { Observable } from 'rxjs';
-import { horLeft, horRight,rightInLeftLeave } from '../../anim/translateX';
+import { horLeft, horRight, rightInLeftLeave } from '../../anim/translateX';
 
 @Component({
   selector: 'app-chat-list',
@@ -13,9 +13,11 @@ import { horLeft, horRight,rightInLeftLeave } from '../../anim/translateX';
 export class ChatListComponent implements OnInit {
 
   userList$: Observable<any>;
-  constructor(private usersService$: UsersService) { }
+  imgUrl:string="";
+  constructor(@Inject('BASE_CONFIG') private config, private usersService$: UsersService) { }
 
   ngOnInit() {
+    this.imgUrl=this.config.imgUrl;
     this.userList$ = this.usersService$.getUsers()
   }
 

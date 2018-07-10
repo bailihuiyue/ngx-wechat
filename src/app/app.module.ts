@@ -34,7 +34,13 @@ import { NoMatchComponent } from './pages/no-match/no-match.component';
     AddressModule
   ],
   providers: [
-    ...Services
+    ...Services,
+    {
+      provide: 'BASE_CONFIG',
+      useValue: {
+        imgUrl: './assets/images/avatar/'
+      }
+    }
   ],
   bootstrap: [AppComponent]
 })

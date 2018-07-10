@@ -1,86 +1,98 @@
 [
     {
-        "avatar":"./assets/images/avatar/1.jpg",
+        "avatar":"1.jpg",
         "name":"张三",
         "text":"[图片]",
         "time":"下午 5:02",
-        "id":"zhangsan"
+        "id":"zhangsan",
+        "unread":3
     },
     {
-        "avatar":"./assets/images/avatar/2.jpg",
+        "avatar":"2.jpg",
         "name":"tina",
         "text":"周三上午开会",
         "time":"昨天",
-        "id":"tina"
+        "id":"tina",
+        "unread":0
     },
     {
-        "avatar":"./assets/images/avatar/3.jpg",
+        "avatar":"3.jpg",
         "name":"jean",
         "text":"[表情]",
         "time":"前天",
-        "id":"jean"
+        "id":"jean",
+        "unread":5
     },
     {
-        "avatar":"./assets/images/avatar/4.jpg",
+        "avatar":"4.jpg",
         "name":"老王",
         "text":"晚上来吃饭吗?",
         "time":"上午8:30",
-        "id":"laowang"
+        "id":"laowang",
+        "unread":0
     },
     {
-        "avatar":"./assets/images/avatar/5.jpg",
+        "avatar":"5.jpg",
         "name":"快递员",
         "text":"[链接]",
         "time":"下午 3:00",
-        "id":"kuaidiyuan"
+        "id":"kuaidiyuan",
+        "unread":0
     },
     {
-        "avatar":"./assets/images/avatar/6.jpg",
+        "avatar":"6.jpg",
         "name":"侄子",
         "text":"叔叔给我带玩具",
         "time":"周三",
-        "id":"zhizi"
+        "id":"zhizi",
+        "unread":0
     },
     {
-        "avatar":"./assets/images/avatar/7.jpg",
+        "avatar":"7.jpg",
         "name":"静静",
         "text":"在吗",
         "time":"6月14日",
-        "id":"jingjing"
+        "id":"jingjing",
+        "unread":0
     },
     {
-        "avatar":"./assets/images/avatar/8.jpg",
+        "avatar":"8.jpg",
         "name":"岩岩",
         "text":"洋洋",
         "time":"6月13日",
-        "id":"yanyan"
+        "id":"yanyan",
+        "unread":0
     },
     {
-        "avatar":"./assets/images/avatar/9.jpg",
+        "avatar":"9.jpg",
         "name":"614",
         "text":"亲们,帮个忙",
         "time":"6月12日",
-        "id":"qinmen"
+        "id":"qinmen",
+        "unread":0
     },
     {
-        "avatar":"./assets/images/avatar/10.jpg",
+        "avatar":"10.jpg",
         "name":"王老师",
         "text":"数学作业来了",
         "time":"去年",
-        "id":"wanglaoshi"
+        "id":"wanglaoshi",
+        "unread":0
     },
     {
-        "avatar":"./assets/images/avatar/1.jpg",
+        "avatar":"1.jpg",
         "name":"日本代购",
         "text":"货到了",
         "time":"去年",
-        "id":"daigou"
+        "id":"daigou",
+        "unread":0
     },
     {
-        "avatar":"./assets/images/avatar/2.jpg",
+        "avatar":"2.jpg",
         "name":"微信支付",
         "text":"微信支付凭证",
         "time":"去年",
-        "id":"weixinzhifu"
+        "id":"weixinzhifu",
+        "unread":0
     }
 ]
