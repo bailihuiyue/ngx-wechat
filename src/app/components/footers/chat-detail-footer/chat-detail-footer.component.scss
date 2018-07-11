@@ -11,7 +11,7 @@
         height: 35px;
         margin-top: 7.5px;
         margin-left:10px;
-        border: 1px solid $wechat-foot-border;
+        border: 1px solid $wechat-foot-button-border;
         border-radius: 50%;
         float: left;
         img{
@@ -23,12 +23,13 @@
         float: left;
         input{
             border: none;
-            border-bottom: 1px solid $wechat-foot-border;
+            border-bottom: 1px solid #D8D8D8;
             line-height: 35px;
             height: 35px;
             margin-top: 7.5px;
-            margin-left:10px;
+            margin-left:5px;
             font-size: 18px;
+            width: 100%;
         }
         input:focus{
             outline: none;
@@ -47,5 +48,58 @@
     .more{
         float:right	;
         margin-right: 10px;
+    }
+    #talk-wrap{
+        float: left;
+        .talk{
+            margin-left: 5px;
+            width: 100%;
+            border: 1px solid $wechat-foot-button-border-light;
+            height: 35px;
+            margin-top: 7.5px;
+            border-radius: 5px;
+            text-align: center;
+            color: $wechat-foot-button-text;
+            font-size: 18px;
+            line-height: 35px;
+
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            user-select: none;
+        }
+    }
+    .talk-microPhone{
+        width: 200px;
+        height: 200px;
+        background-color: $wechat-mask-background;
+        position: fixed;
+        opacity: 0.9;
+        border-radius: 5px;
+        color:#fff;
+        padding: 20px;
+        img{
+            width: 100px;
+            height: 125px;
+            float: left;
+        }
+        .talk-microPhone-top{
+            height: 125px;
+            position: relative;
+            .min-voice:after{
+                width: 30px;
+                height: 0px;
+                content: "";
+                position: absolute;
+                border-top:15px solid #fff;
+                border-right: 10px solid transparent;
+                float: right;
+                bottom: 2px;
+            }
+        }  
+        .text{
+            text-align: center;
+            margin-top: 10px;
+            float: none;
+        }
     }
 }

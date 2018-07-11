@@ -2,6 +2,7 @@ import { Component, OnInit, HostBinding, Inject } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { leftInRightLeave } from '../../anim/translateX';
 import { UsersService } from '../../services/get-users.service';
+import * as $ from 'jquery';
 @Component({
   selector: 'app-chat-detail',
   templateUrl: './chat-detail.component.html',

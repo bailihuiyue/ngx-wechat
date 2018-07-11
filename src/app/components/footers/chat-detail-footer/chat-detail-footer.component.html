@@ -1,6 +1,16 @@
 <div class="chat-detail-footer">
-    <div class="voice"><img src="./assets/images/footer/voice.png" alt=""></div>
-    <div class="text"><input type="text"></div>
+    <div class="voice" (click)="changeTxt()"><img src="./assets/images/footer/{{pic}}.png" alt=""></div>
+    <div [hidden]="!isTalk" id="talk-wrap">
+        <div class="talk">按住 说话</div>
+    </div>
+    <div [hidden]="isTalk" class="text" id="footerIpt"><input #txt type="text"/></div>
     <div class="more"><img src="./assets/images/footer/more.png" alt=""></div>
     <div class="face"><img src="./assets/images/footer/face.png" alt=""></div>
+    <div [hidden]="!showMicroPhone" class="center-css3 talk-microPhone">
+        <div class="talk-microPhone-top">
+            <img src="./assets/images/voice.png" alt="">
+            <div class="min-voice"></div>
+        </div>
+        <div class="text">手指上滑,取消发送</div>
+    </div>
 </div>
