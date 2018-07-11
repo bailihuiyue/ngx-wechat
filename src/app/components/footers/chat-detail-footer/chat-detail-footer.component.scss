@@ -6,6 +6,7 @@
     z-index: 1;
     border-top: 1px solid #D9D9D9;
     height: 50px;
+    background-color: $wechat-foot-background;
     .voice,.face,.more{
         width: 35px;
         height: 35px;
@@ -30,6 +31,7 @@
             margin-left:5px;
             font-size: 18px;
             width: 100%;
+            background-color: $wechat-foot-background;
         }
         input:focus{
             outline: none;
@@ -44,6 +46,13 @@
         img{
             padding: 0;
         }
+    }
+    .face-keyboard-border{
+        border: 1px solid $wechat-foot-button-border;
+        width: 35px;
+        height: 35px;
+        padding: 5px;
+        margin-top: 7.5px;
     }
     .more{
         float:right	;
@@ -101,5 +110,13 @@
             margin-top: 10px;
             float: none;
         }
+    }
+}
+.lazy{
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    img{
+        width: 100%;
     }
 }
