@@ -43,6 +43,7 @@
         float:right	;
         width: 40px;
         margin-top: 6px;
+        margin-right: -2px;
         img{
             padding: 0;
         }
@@ -53,6 +54,7 @@
         height: 35px;
         padding: 5px;
         margin-top: 7.5px;
+        margin-right: 0px;
     }
     .more{
         float:right	;
@@ -112,10 +114,11 @@
         }
     }
 }
-.lazy{
+.lazy,.more-panel{
     width: 100%;
     position: absolute;
     top: 100%;
+    background-color: $wechat-foot-background;
     img{
         width: 100%;
     }

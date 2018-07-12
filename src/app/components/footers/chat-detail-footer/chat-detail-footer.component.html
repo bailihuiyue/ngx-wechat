@@ -1,11 +1,19 @@
 <div class="chat-detail-footer">
-    <div class="voice" (click)="changeTxt()"><img src="./assets/images/footer/{{voicePic}}.png" alt=""></div>
+    <div class="voice" (click)="changeTxt()">
+        <img src="./assets/images/footer/{{voicePic}}.png" alt="">
+    </div>
     <div [hidden]="!isTalk" id="talk-wrap">
         <div class="talk">按住 说话</div>
     </div>
-    <div [hidden]="isTalk" class="text" id="footerIpt"><input #txt type="text"/></div>
-    <div class="more"><img src="./assets/images/footer/more.png" alt=""></div>
-    <div class="face" (click)="showEmoji()"><img src="./assets/images/footer/{{emojiPic}}.png" alt=""></div>
+    <div [hidden]="isTalk" class="text" id="footerIpt">
+        <input #txt type="text" />
+    </div>
+    <div class="more" (click)="showMore()">
+        <img src="./assets/images/footer/more.png" alt="">
+    </div>
+    <div class="face" (click)="showEmoji()">
+        <img src="./assets/images/footer/{{emojiPic}}.png" alt="">
+    </div>
     <div [hidden]="!showMicroPhone" class="center-css3 talk-microPhone">
         <div class="talk-microPhone-top">
             <img src="./assets/images/voice.png" alt="">
@@ -15,6 +23,9 @@
     </div>
 </div>
 <!-- 表情这块懒得做了,直接加载个图片了,所以取个名字叫lazy,鄙视自已一下下,😄 -->
-<div class="lazy">
+<div class="lazy" [hidden]="!showEmojiPanel">
     <img src="./assets/images/lazy.png" alt="">
+</div>
+<div class="more-panel" [hidden]="showEmojiPanel">
+    123
 </div>
