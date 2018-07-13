@@ -23,9 +23,9 @@
     </div>
 </div>
 <!-- 表情这块懒得做了,直接加载个图片了,所以取个名字叫lazy,鄙视自已一下下,😄 -->
-<div class="lazy" [hidden]="!showEmojiPanel">
+<div class="lazy" [ngStyle]="{'z-index':showEmojiPanel ? '1' : '0' }">
     <img src="./assets/images/lazy.png" alt="">
 </div>
-<div class="more-panel" [hidden]="showEmojiPanel">
-    123
+<div class="more-panel" [ngStyle]="{'z-index':!showEmojiPanel ? '1' : '0','height':height+'px' }">
+    {{height}}
 </div>

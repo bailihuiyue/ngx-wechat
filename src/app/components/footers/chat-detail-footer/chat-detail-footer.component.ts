@@ -30,13 +30,12 @@ export class ChatDetailFooterComponent implements OnInit {
   showMicroPhone: boolean = false;
   voicePic: string = "voice";
   height: number = 0;
-
-  //表情栏的显示与隐藏
-  isShowEmoji: boolean = false;
   emojiPic: string = "face";
-
+  //控制更多按钮面的显示与隐藏
+  showMorePanel: boolean = false;
   //表情栏与更多栏的显示与隐藏
   showEmojiPanel: boolean = false;
+
   @ViewChild('txt') inputTxt: ElementRef;
   ngOnInit() {
 
@@ -48,8 +47,10 @@ export class ChatDetailFooterComponent implements OnInit {
     let rate = 0.7456;
     let width = $("body").width();
     this.height = width * rate;
+
   }
 
+  //输入文字按钮
   changeTxt() {
     this.isTalk = !this.isTalk;
     if (this.isTalk) {
@@ -59,29 +60,55 @@ export class ChatDetailFooterComponent implements OnInit {
       //TODO:problem:不能获取焦点,不知道原因
       this.inputTxt.nativeElement.focus();
     }
+
+    //点击该按钮时隐藏所有面板
+    this.closeAllPanel();
+    this.showMorePanel = false;
+    this.showEmojiPanel = false;
   }
 
   //TODO:表情到键盘的按钮切换有点不协调是因为没有找到不带圆圈的笑脸表情图片
   showEmoji() {
-    this.showEmojiPanel = true;
-    this.isShowEmoji = !this.isShowEmoji;
-    if (this.isShowEmoji) {
+    this.showMorePanel = false;
+    this.showEmojiPanel = !this.showEmojiPanel;
+    if (this.showEmojiPanel) {
       this.emojiPic = "keyboard";
       $(".face").addClass("face-keyboard-border");
-      //TODO:angular 动画不知道如何传参,只能用jq了
+      //TODO:problem:angular 动画不知道如何传参,只能用jq了
       $(".body,.chat-detail-footer").animate({ "bottom": +this.height + "px" });
       $(".lazy").animate({ "top": $("app-chat-detail").height() - this.height + "px" });
     } else {
       this.emojiPic = "face";
       $(".face").removeClass("face-keyboard-border");
-      $(".body,.chat-detail-footer").animate({ "bottom": "0px" });
-      $(".lazy").animate({ "top": "100%" })
+      if (this.showMorePanel && !this.showEmojiPanel) {
+        this.showEmojiPanel = true;
+      } else {
+        this.closeAllPanel();
+      }
     }
   }
 
+  //显示 更多 面板
   showMore() {
+    this.emojiPic = "face";
+    $(".face").removeClass("face-keyboard-border");
     this.showEmojiPanel = false;
-    $(".body,.chat-detail-footer").animate({ "bottom": +this.height + "px" });
-    $(".more-panel").animate({ "top": $("app-chat-detail").height() - this.height + "px" });
+    this.showMorePanel = !this.showMorePanel;
+    if (this.showMorePanel) {
+      $(".body,.chat-detail-footer").animate({ "bottom": +this.height + "px" });
+      $(".more-panel").animate({ "top": $("app-chat-detail").height() - this.height + "px" });
+    } else {
+      if (this.showEmojiPanel && !this.showMorePanel) {
+        this.showMorePanel = true;
+      } else {
+        this.closeAllPanel();
+      }
+    }
+  }
+
+  //收起所有面板
+  closeAllPanel() {
+    $(".body,.chat-detail-footer").animate({ "bottom": "0" });
+    $(".lazy,.more-panel").animate({ "top": "100%" });
   }
 }
