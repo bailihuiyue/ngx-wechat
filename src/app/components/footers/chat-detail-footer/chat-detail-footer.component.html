@@ -1,19 +1,11 @@
 <div class="chat-detail-footer">
-    <div class="voice" (click)="changeTxt()">
-        <img src="./assets/images/footer/{{voicePic}}.png" alt="">
-    </div>
-    <div [hidden]="!isTalk" id="talk-wrap">
-        <div class="talk">按住 说话</div>
-    </div>
+    <img class="voice" src="./assets/images/footer/{{voicePic}}.png" (click)="changeTxt()">
+    <div [hidden]="!isTalk" id="talk-wrap" class="talk">按住 说话</div>
     <div [hidden]="isTalk" class="text" id="footerIpt">
         <input #txt type="text" />
     </div>
-    <div class="more" (click)="showMore()">
-        <img src="./assets/images/footer/more.png" alt="">
-    </div>
-    <div class="face" (click)="showEmoji()">
-        <img src="./assets/images/footer/{{emojiPic}}.png" alt="">
-    </div>
+    <img class="more" src="./assets/images/footer/more.png" (click)="showMore()">
+    <img class="face" src="./assets/images/footer/{{emojiPic}}.png" (click)="showEmoji()">
     <div [hidden]="!showMicroPhone" class="center-css3 talk-microPhone">
         <div class="talk-microPhone-top">
             <img src="./assets/images/voice.png" alt="">
@@ -27,5 +19,15 @@
     <img src="./assets/images/lazy.png" alt="">
 </div>
 <div class="more-panel" [ngStyle]="{'z-index':!showEmojiPanel ? '1' : '0','height':height+'px' }">
-    {{height}}
+    <div class="panel-container clearfix">
+        <div *ngFor="let btn of morePanelBtns; let i = index;">
+            <div *ngIf="i%8===0; else elseBlock">
+                <div class="box">
+                    <img src="./assets/images/more-panel/{{btn[0]}}.png" alt="">
+                    <div class="text">{{btn[1]}}</div>
+                </div>
+            </div>
+            <ng-template #elseBlock>{{i}}</ng-template>
+        </div>
+    </div>
 </div>

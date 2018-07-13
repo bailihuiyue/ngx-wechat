@@ -9,14 +9,24 @@ export class ChatDetailFooterComponent implements OnInit {
 
   constructor() { }
   @HostListener('touchstart', ['$event.target']) touchstart(btn) {
-    $(btn).parent(".voice,.more,.face").css("background-color", "#E2E2E2");
-    if ($(btn).hasClass("talk")) {
-      $(btn).css("background-color", "#E2E2E2").text("松开 结束");
-      this.showMicroPhone = true;
+    //委托一时爽,但是要排除父元素
+    if(!$(btn).is(".more-panel,.panel-container,.chat-detail-footer,.text,.box,input")){
+      $(btn).css("background-color", "#E2E2E2");
+      if ($(btn).hasClass("talk")) {
+        $(btn).css("background-color", "#E2E2E2").text("松开 结束");
+        this.showMicroPhone = true;
+      }
     }
   }
   @HostListener('touchend', ['$event.target']) touchend(btn) {
-    $(btn).parent(".voice,.more,.face").css("background-color", "transparent");
+    if(!$(btn).is(".more-panel,.panel-container,.chat-detail-footer,.text,.box,input")){
+      //小按钮还原回的颜色
+      if($(btn).parent().is(".chat-detail-footer")){
+        $(btn).css("background-color", "transparent");
+      }else{//morePanel还原回的颜色
+        $(btn).css("background-color", "#FCFCFC");
+      }  
+    }
     if ($(btn).hasClass("talk")) {
       $(btn).css("background-color", "transparent").text("按住 说话");
       this.showMicroPhone = false;
@@ -36,6 +46,21 @@ export class ChatDetailFooterComponent implements OnInit {
   //表情栏与更多栏的显示与隐藏
   showEmojiPanel: boolean = false;
 
+  //更多面板的按钮-第一页
+  morePanelBtns:Array<Array<string>>=[
+    ["xiangce","相册"],
+    ["paishe","拍摄"],
+    ["shipintonghua","视频通话"],
+    ["weizhi","位置"],
+    ["hongbao","红包"],
+    ["zhuanzhang","转账"],
+    ["yuyinshuru","语音输入"],
+    ["mingpian","名片"],
+    ["wodeshoucang","我的收藏"],
+    ["wenjian","文件"]
+  ];
+  //更多面板的按钮-第二页
+  morePanelBtns2:Array<Array<string>>=[];
   @ViewChild('txt') inputTxt: ElementRef;
   ngOnInit() {
 

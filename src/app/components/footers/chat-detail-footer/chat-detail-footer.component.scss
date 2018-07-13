@@ -15,10 +15,28 @@
         border: 1px solid $wechat-foot-button-border;
         border-radius: 50%;
         float: left;
+        padding: 5px;
+    }
+    .face{
+        border: none;
+        float:right	;
+        width: 40px;
+        height: 40px;
+        margin-top: 6px;
+        margin-right: -2px;
+        margin-left: 0px;
+        padding: 0;
         img{
-            width: 100%;
-            padding: 5px;
+            padding: 0;
         }
+    }
+    .face-keyboard-border{
+        border: 1px solid $wechat-foot-button-border;
+        width: 35px;
+        height: 35px;
+        padding: 5px;
+        margin-top: 7.5px;
+        margin-right: 0px;
     }
     .text{
         float: left;
@@ -38,46 +56,26 @@
             border-bottom: 1px solid $wechat-green;
         }
     }
-    .face{
-        border: none;
-        float:right	;
-        width: 40px;
-        margin-top: 6px;
-        margin-right: -2px;
-        img{
-            padding: 0;
-        }
-    }
-    .face-keyboard-border{
-        border: 1px solid $wechat-foot-button-border;
-        width: 35px;
-        height: 35px;
-        padding: 5px;
-        margin-top: 7.5px;
-        margin-right: 0px;
-    }
     .more{
         float:right	;
         margin-right: 10px;
     }
-    #talk-wrap{
+    .talk{
         float: left;
-        .talk{
-            margin-left: 5px;
-            width: 100%;
-            border: 1px solid $wechat-foot-button-border-light;
-            height: 35px;
-            margin-top: 7.5px;
-            border-radius: 5px;
-            text-align: center;
-            color: $wechat-foot-button-text;
-            font-size: 18px;
-            line-height: 35px;
+        margin-left: 5px;
+        width: 100%;
+        border: 1px solid $wechat-foot-button-border-light;
+        height: 35px;
+        margin-top: 7.5px;
+        border-radius: 5px;
+        text-align: center;
+        color: $wechat-foot-button-text;
+        font-size: 18px;
+        line-height: 35px;
 
-            -moz-user-select: none;
-            -khtml-user-select: none;
-            user-select: none;
-        }
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        user-select: none;
     }
     .talk-microPhone{
         width: 200px;
@@ -121,5 +119,26 @@
     background-color: $wechat-foot-background;
     img{
         width: 100%;
+    }
+    .panel-container{
+        border-top: 1px solid $wechat-foot-button-border-light;
+        padding: 20px 30px 10px 30px;
+        .box{
+            float: left;
+            width: 20%;
+            margin: 2.5%;
+            img{
+                width: 100%;
+                border: 1px solid #d6d6d6;
+                padding: 15px;
+                border-radius: 15px;
+                background-color: #FCFCFC;
+            }
+            .text{
+                color: $wechat-foot-more-btn-color;
+                text-align: center;
+                font-size: 14px;
+            }
+        }
     }
 }
