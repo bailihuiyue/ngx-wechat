@@ -161,3 +161,4 @@ export class ChatDetailFooterComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustHtml(this.str);
   }
 }
+ 
