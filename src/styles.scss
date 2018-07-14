@@ -1,3 +1,4 @@
+@import './define.scss';
 *{
     font-family: "Microsoft YaHei";
     box-sizing: border-box;
@@ -70,4 +71,28 @@ body{
 
 app-chat-detail{
     overflow: hidden;
+}
+
+
+/*对应bug001*/
+.panel-container{
+    border-top: 1px solid $wechat-foot-button-border-light;
+    padding: 20px 30px 10px 30px;
+    .box{
+        float: left;
+        width: 20%;
+        margin: 2.5%;
+        img{
+            width: 100%;
+            border: 1px solid #d6d6d6;
+            padding: 15px;
+            border-radius: 15px;
+            background-color: #FCFCFC;
+        }
+        .text{
+            color: $wechat-foot-more-btn-color;
+            text-align: center;
+            font-size: 14px;
+        }
+    }
 }

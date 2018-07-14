@@ -18,16 +18,50 @@
 <div class="lazy" [ngStyle]="{'z-index':showEmojiPanel ? '1' : '0' }">
     <img src="./assets/images/lazy.png" alt="">
 </div>
+<!--TODO:bug001:[innerHTML]="boxContent()" 写在more-panel 标签中时无法触发touchend事件,不知原因,因此先写死html吧-->
 <div class="more-panel" [ngStyle]="{'z-index':!showEmojiPanel ? '1' : '0','height':height+'px' }">
-    <div class="panel-container clearfix">
-        <div *ngFor="let btn of morePanelBtns; let i = index;">
-            <div *ngIf="i%8===0; else elseBlock">
-                <div class="box">
-                    <img src="./assets/images/more-panel/{{btn[0]}}.png" alt="">
-                    <div class="text">{{btn[1]}}</div>
-                </div>
-            </div>
-            <ng-template #elseBlock>{{i}}</ng-template>
+    <div class="panel-container clearfix" style="position:absolute;top:0;right:000%">
+        <div class="box">
+            <img src="./assets/images/more-panel/xiangce.png" alt="">
+            <div class="text">相册</div>
+        </div>
+        <div class="box">
+            <img src="./assets/images/more-panel/paishe.png" alt="">
+            <div class="text">拍摄</div>
+        </div>
+        <div class="box">
+            <img src="./assets/images/more-panel/shipintonghua.png" alt="">
+            <div class="text">视频通话</div>
+        </div>
+        <div class="box">
+            <img src="./assets/images/more-panel/weizhi.png" alt="">
+            <div class="text">位置</div>
+        </div>
+        <div class="box">
+            <img src="./assets/images/more-panel/hongbao.png" alt="">
+            <div class="text">红包</div>
+        </div>
+        <div class="box">
+            <img src="./assets/images/more-panel/zhuanzhang.png" alt="">
+            <div class="text">转账</div>
+        </div>
+        <div class="box">
+            <img src="./assets/images/more-panel/yuyinshuru.png" alt="">
+            <div class="text">语音输入</div>
+        </div>
+        <div class="box">
+            <img src="./assets/images/more-panel/mingpian.png" alt="">
+            <div class="text">名片</div>
+        </div>
+    </div>
+    <div class="panel-container clearfix" style="position:absolute;top:0;right:100%">
+        <div class="box">
+            <img src="./assets/images/more-panel/wodeshoucang.png" alt="">
+            <div class="text">我的收藏</div>
+        </div>
+        <div class="box">
+            <img src="./assets/images/more-panel/wenjian.png" alt="">
+            <div class="text">文件</div>
         </div>
     </div>
 </div>

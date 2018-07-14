@@ -1,5 +1,7 @@
 import { Component, OnInit, HostListener, ElementRef, ViewChild } from '@angular/core';
 import * as $ from 'jquery';
+//取消angular对html转义
+import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-chat-detail-footer',
   templateUrl: './chat-detail-footer.component.html',
@@ -7,10 +9,10 @@ import * as $ from 'jquery';
 })
 export class ChatDetailFooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(public sanitizer: DomSanitizer) { }
   @HostListener('touchstart', ['$event.target']) touchstart(btn) {
     //委托一时爽,但是要排除父元素
-    if(!$(btn).is(".more-panel,.panel-container,.chat-detail-footer,.text,.box,input")){
+    if (!$(btn).is(".more-panel,.panel-container,.chat-detail-footer,.text,.box,input")) {
       $(btn).css("background-color", "#E2E2E2");
       if ($(btn).hasClass("talk")) {
         $(btn).css("background-color", "#E2E2E2").text("松开 结束");
@@ -19,13 +21,13 @@ export class ChatDetailFooterComponent implements OnInit {
     }
   }
   @HostListener('touchend', ['$event.target']) touchend(btn) {
-    if(!$(btn).is(".more-panel,.panel-container,.chat-detail-footer,.text,.box,input")){
+    if (!$(btn).is(".more-panel,.panel-container,.chat-detail-footer,.text,.box,input")) {
       //小按钮还原回的颜色
-      if($(btn).parent().is(".chat-detail-footer")){
+      if ($(btn).parent().is(".chat-detail-footer")) {
         $(btn).css("background-color", "transparent");
-      }else{//morePanel还原回的颜色
+      } else {//morePanel还原回的颜色
         $(btn).css("background-color", "#FCFCFC");
-      }  
+      }
     }
     if ($(btn).hasClass("talk")) {
       $(btn).css("background-color", "transparent").text("按住 说话");
@@ -45,22 +47,22 @@ export class ChatDetailFooterComponent implements OnInit {
   showMorePanel: boolean = false;
   //表情栏与更多栏的显示与隐藏
   showEmojiPanel: boolean = false;
-
   //更多面板的按钮-第一页
-  morePanelBtns:Array<Array<string>>=[
-    ["xiangce","相册"],
-    ["paishe","拍摄"],
-    ["shipintonghua","视频通话"],
-    ["weizhi","位置"],
-    ["hongbao","红包"],
-    ["zhuanzhang","转账"],
-    ["yuyinshuru","语音输入"],
-    ["mingpian","名片"],
-    ["wodeshoucang","我的收藏"],
-    ["wenjian","文件"]
+  morePanelBtns: Array<Array<string>> = [
+    ["xiangce", "相册"],
+    ["paishe", "拍摄"],
+    ["shipintonghua", "视频通话"],
+    ["weizhi", "位置"],
+    ["hongbao", "红包"],
+    ["zhuanzhang", "转账"],
+    ["yuyinshuru", "语音输入"],
+    ["mingpian", "名片"],
+    ["wodeshoucang", "我的收藏"],
+    ["wenjian", "文件"]
   ];
+  str: string = "";
   //更多面板的按钮-第二页
-  morePanelBtns2:Array<Array<string>>=[];
+  morePanelBtns2: Array<Array<string>> = [];
   @ViewChild('txt') inputTxt: ElementRef;
   ngOnInit() {
 
@@ -135,5 +137,27 @@ export class ChatDetailFooterComponent implements OnInit {
   closeAllPanel() {
     $(".body,.chat-detail-footer").animate({ "bottom": "0" });
     $(".lazy,.more-panel").animate({ "top": "100%" });
+  }
+
+  //使用sanitizer,让angular信任html字符串,必须前台使用下面的属性绑定
+  //[innerHTML]="boxContent()"
+  //TODO:bug001:被angular接管的标签会生成<div _ngcontent-c3="" class="box">这样的东西
+  //而使用sanitizer将会完全生成不被angular控制的html标签,从而导致css的失效
+  //angular的标签都是box[_ngcontent-c3]这种的
+  boxContent() {
+    this.str = '';
+    this.morePanelBtns.forEach((val, i, array) => {
+      if (i % 8 === 0) {
+        this.str += '<div class="panel-container clearfix" style="position:absolute;top:0;right:'+i/8+'00%">';
+      }
+      this.str += '<div class="box">' +
+        '<img src="./assets/images/more-panel/' + val[0] + '.png" alt="">' +
+        '<div class="text">' + val[1] + '</div>' +
+        '</div>';
+      if ((i + 1) % 8 === 0) {
+        this.str += '</div>';
+      }
+    });
+    return this.sanitizer.bypassSecurityTrustHtml(this.str);
   }
 }
