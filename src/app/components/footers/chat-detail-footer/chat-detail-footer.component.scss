@@ -120,6 +120,9 @@
     img{
         width: 100%;
     }
+    .box-wrap{
+        overflow-x: scroll;
+    }
     /*由于bug001,此段scss失效*/
     .panel-container{
         border-top: 1px solid $wechat-foot-button-border-light;

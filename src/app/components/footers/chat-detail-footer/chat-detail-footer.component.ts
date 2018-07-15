@@ -65,6 +65,8 @@ export class ChatDetailFooterComponent implements OnInit {
   panelBtns: Array<Array<Array<string>>> = [];
   //更多面板的按钮-第二页
   morePanelBtns2: Array<Array<string>> = [];
+  //body的宽度
+  width:number=0;
   @ViewChild('txt') inputTxt: ElementRef;
   ngOnInit() {
 
@@ -74,8 +76,8 @@ export class ChatDetailFooterComponent implements OnInit {
 
     //表情图片的宽与长的比率
     let rate = 0.7456;
-    let width = $("body").width();
-    this.height = width * rate;
+    this.width = $("body").width();
+    this.height = this.width * rate;
 
     //解决bug001
     let count = 0,j=0;
