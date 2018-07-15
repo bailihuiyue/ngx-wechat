@@ -61,6 +61,8 @@ export class ChatDetailFooterComponent implements OnInit {
     ["wenjian", "文件"]
   ];
   str: string = "";
+  //从数据的角度解决bug001
+  panelBtns: Array<Array<Array<string>>> = [];
   //更多面板的按钮-第二页
   morePanelBtns2: Array<Array<string>> = [];
   @ViewChild('txt') inputTxt: ElementRef;
@@ -75,6 +77,18 @@ export class ChatDetailFooterComponent implements OnInit {
     let width = $("body").width();
     this.height = width * rate;
 
+    //解决bug001
+    let count = 0,j=0;
+    this.morePanelBtns.forEach((val, i) => {
+      this.panelBtns[count] = this.panelBtns[count] || [];
+      this.panelBtns[count][j] = this.panelBtns[count][j] || [];
+      this.panelBtns[count][j].push(val[0], val[1]);
+      j++;
+      if ((i + 1) % 8 === 0) {
+        count++;
+        j=0;
+      }
+    });
   }
 
   //输入文字按钮
@@ -148,7 +162,7 @@ export class ChatDetailFooterComponent implements OnInit {
     this.str = '';
     this.morePanelBtns.forEach((val, i, array) => {
       if (i % 8 === 0) {
-        this.str += '<div class="panel-container clearfix" style="position:absolute;top:0;right:'+i/8+'00%">';
+        this.str += '<div class="panel-container clearfix" style="position:absolute;top:0;right:' + i / 8 + '00%">';
       }
       this.str += '<div class="box">' +
         '<img src="./assets/images/more-panel/' + val[0] + '.png" alt="">' +
@@ -161,4 +175,3 @@ export class ChatDetailFooterComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustHtml(this.str);
   }
 }
- 
