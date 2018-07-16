@@ -8,6 +8,8 @@ import { IndexFooterComponent } from './footers/index-footer/index-footer.compon
 import { ContactComponent } from './contact-list/contact-list.component';
 import { HeaderButtonComponent } from './headers/header-button/header-button.component';
 import { IndexMenuComponent } from './headers/index-menu/index-menu.component';
+import { RedEnvelopeHeaderComponent } from './headers/red-envelope-header/red-envelope-header.component';
+import { RedEnvelopeFooterComponent } from './footers/red-envelope-footer/red-envelope-footer.component';
 @NgModule({
   declarations: [
     ChatListComponent,
@@ -16,7 +18,9 @@ import { IndexMenuComponent } from './headers/index-menu/index-menu.component';
     IndexFooterComponent,
     ContactComponent,
     HeaderButtonComponent,
-    IndexMenuComponent
+    IndexMenuComponent,
+    RedEnvelopeHeaderComponent,
+    RedEnvelopeFooterComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +33,9 @@ import { IndexMenuComponent } from './headers/index-menu/index-menu.component';
     IndexFooterComponent,
     ContactComponent,
     HeaderButtonComponent,
-    IndexMenuComponent
+    IndexMenuComponent,
+    RedEnvelopeHeaderComponent,
+    RedEnvelopeFooterComponent
   ]
 })
 export class SharedModule { }

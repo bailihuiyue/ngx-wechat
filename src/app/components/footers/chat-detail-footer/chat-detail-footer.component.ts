@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener, ElementRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import * as $ from 'jquery';
 //取消angular对html转义
 import { DomSanitizer } from '@angular/platform-browser';
@@ -9,7 +10,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class ChatDetailFooterComponent implements OnInit {
 
-  constructor(public sanitizer: DomSanitizer) { }
+  constructor(private router: Router,public sanitizer: DomSanitizer) { }
   @HostListener('touchstart', ['$event.target', '$event']) touchstart(ele, e) {
     //委托一时爽,但是要排除父元素
     if (!$(ele).is(".more-panel,.panel-container,.chat-detail-footer,.text,.box,input,.more-panel-dot")) {
@@ -35,7 +36,6 @@ export class ChatDetailFooterComponent implements OnInit {
     }
 
     if ($(ele).is(".panel-container,img")) {
-      debugger;
       if (this.morePanelLeft) {
         //左
         $(".box-wrap").animate({ "marginLeft": "0px" }, 200);
@@ -216,6 +216,17 @@ export class ChatDetailFooterComponent implements OnInit {
       $(".box-wrap").css({ "marginLeft": parseInt($(".box-wrap").css("marginLeft"))+(this.width + direction)/90 + "px" });
       if (Math.abs(direction) > 30) {
         this.morePanelLeft = true;
+      }
+    }
+  }
+
+  showMsg(e){
+    let ele=e.currentTarget;
+    if(ele.tagName==="IMG"){
+      if(ele.src.indexOf("hongbao")>=0){
+        this.router.navigateByUrl("/redEnvelope");
+      }else{
+        alert("请点击红包");
       }
     }
   }

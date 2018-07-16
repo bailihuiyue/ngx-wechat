@@ -1,0 +1,61 @@
+@import '../../../define.scss';
+.red-envelope-body{
+    .title{
+        position: absolute;
+        top: 0;
+        left: 50px;
+        color: white;
+        line-height: 50px;
+        font-size: 26px;
+        color:#FFF2BE;
+    }
+    .body{
+        background-color: $wechat-body-background;
+        position: absolute;
+        top: 50px;
+        bottom: 50px;
+        width: 100%;
+        .red-text-container{
+            height: 50px;
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            .text{
+                color: #000;
+                line-height: 50px;
+                font-size: 16px;
+                padding:0 15px;
+                text-align: left;
+                float: right;
+            }
+            input{
+                color: #999999;
+                text-align: right;
+                font-size: 16px;
+                float: right;
+                border: none;
+                outline: none;
+                height: 50px;
+            }
+        }
+        .money{
+            text-align: center;
+            margin: 30px;
+            *{
+                font-size: 40px;
+                font-weight: bold;
+            }
+        }
+        .sendMoney{
+            height: 60px;
+            margin: 20px;
+            background-color:#D85940; 
+            color: #fff;
+            display: block;
+            text-align: center;
+            font-size: 20px;
+            line-height: 60px;
+            border-radius: 5px;
+        }
+    }
+}

@@ -16,11 +16,12 @@ import Services from './services/index';
 import { currentPageReducer } from './redux/currentPage.redux';
 import { DisplayIndexMenuReducer } from './redux/indexMenu.redux';
 import { NoMatchComponent } from './pages/no-match/no-match.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     ...Pages,
-    NoMatchComponent
+    NoMatchComponent,
   ],
   imports: [
     BrowserModule,

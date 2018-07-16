@@ -28,7 +28,7 @@
             <div *ngFor="let btnArr of panelBtns;let i=index" class="panel-container clearfix" style="float:left;" [ngStyle]="{'height':height-40+'px','width':width+'px'}">
                 <div *ngFor="let btn of btnArr;let j=index">
                     <div class="box">
-                        <img (touchmove)="sildeMorePanel($event)" src="./assets/images/more-panel/{{btn&&btn[0]}}.png" alt="">
+                        <img (touchmove)="sildeMorePanel($event)" src="./assets/images/more-panel/{{btn&&btn[0]}}.png" (click)="showMsg($event)">
                         <div class="text">{{btn&&btn[1]}}</div>
                     </div>
                 </div>

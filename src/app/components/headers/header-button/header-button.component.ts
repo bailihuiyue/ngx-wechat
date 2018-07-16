@@ -12,6 +12,7 @@ export class HeaderButtonComponent implements OnInit {
   @Input() imgSrc: string;
   @Input() href: string;
   @Input() style: string = "";
+  @Input() btnColor: string = "red";
   status: boolean = false;
   @HostListener('click') onClick() {
     if (this.href === "back") {
@@ -24,6 +25,8 @@ export class HeaderButtonComponent implements OnInit {
       }
       //获取redux/store的值
       this.store.select('DisplayIndexMenuReducer').subscribe(data => this.status = data);
+    }else if(this.href ==="redMore"){
+      alert("test");
     }else{
       this.router.navigate([this.href]);
     }
@@ -37,9 +40,17 @@ export class HeaderButtonComponent implements OnInit {
   }
 
   changeBlack(e) {
-    e.currentTarget.style.backgroundColor = "black";
+    let color="black";
+    if(this.btnColor==="red"){
+      color="#F4AF9C";
+    }
+    e.currentTarget.style.backgroundColor = color;
   }
   changeNormal(e) {
-    e.currentTarget.style.backgroundColor = "#1D1C1F";
+    let color="#1D1C1F";
+    if(this.btnColor==="red"){
+      color="#D85940";
+    }
+    e.currentTarget.style.backgroundColor = color;
   }
 }
