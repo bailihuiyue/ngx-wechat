@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
+import { FormsModule } from '@angular/forms';
 
 import { SharedModule } from './components/index';
 import { AddressModule } from './pages/address/address.module'
@@ -32,7 +33,8 @@ import { NoMatchComponent } from './pages/no-match/no-match.component';
     StoreModule.forRoot({ currentPageReducer, DisplayIndexMenuReducer }),
     StoreDevtoolsModule.instrument(),
     SharedModule,
-    AddressModule
+    AddressModule,
+    FormsModule
   ],
   providers: [
     ...Services,

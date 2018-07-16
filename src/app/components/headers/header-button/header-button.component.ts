@@ -12,7 +12,7 @@ export class HeaderButtonComponent implements OnInit {
   @Input() imgSrc: string;
   @Input() href: string;
   @Input() style: string = "";
-  @Input() btnColor: string = "red";
+  @Input() btnColor: string = "";
   status: boolean = false;
   @HostListener('click') onClick() {
     if (this.href === "back") {

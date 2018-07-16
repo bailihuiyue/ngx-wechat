@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-red-envelope',
@@ -14,6 +14,7 @@ export class RedEnvelopeComponent implements OnInit {
   hrefMore: string = "/more";
   styleMore = { 'position': 'absolute', 'top': '0', 'right': '0px' };
 
+  money: string;
   constructor() { }
 
   ngOnInit() {

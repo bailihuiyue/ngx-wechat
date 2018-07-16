@@ -1,3 +1,12 @@
 .red-envelope-header{
     background-color:#D85940;
+    .title{
+        position: absolute;
+        top: 0;
+        left: 50px;
+        color: white;
+        line-height: 50px;
+        font-size: 26px;
+        color:#FFF2BE;
+    }
 }

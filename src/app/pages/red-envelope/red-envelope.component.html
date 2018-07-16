@@ -7,11 +7,11 @@
     </div>
     <div class="red-text-container clearfix">
         <div class="text" style="float:left;">留言</div>
-        <input type="text" placeholder="恭喜发财,大吉大利" style="padding-right:15px;">
+        <input name="money" [(ngModel)]="money" type="text" placeholder="恭喜发财,大吉大利" style="padding-right:15px;">
     </div>
     <div class="money">
-        <span>¥</span>
-        <span>{{number}}</span>
+        <span>¥&nbsp;</span>
+        <span>{{money}}</span>
     </div>
     <a class="sendMoney">塞钱进红包</a>
 </div>
