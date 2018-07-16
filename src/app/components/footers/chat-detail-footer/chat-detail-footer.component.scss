@@ -121,7 +121,7 @@
         width: 100%;
     }
     .box-wrap{
-        overflow-x: scroll;
+        /*overflow-x: scroll;*/
     }
     /*由于bug001,此段scss失效*/
     .panel-container{
@@ -143,6 +143,20 @@
                 text-align: center;
                 font-size: 14px;
             }
+        }
+    }
+    .more-panel-dot{
+        text-align: center;
+        .dot{
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            background-color: #FCFCFC;
+            display: inline-block;
+            margin: 8px;
+        }
+        .active{
+            background-color: #DBDBDB;
         }
     }
 }

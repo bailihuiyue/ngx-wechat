@@ -23,17 +23,20 @@
 <!--TODO:bug001:[innerHTML]="boxContent()" 写在more-panel 标签中时无法触发touchend事件,不知原因,因此先写死html吧-->
 <div class="more-panel" [ngStyle]="{'z-index':!showEmojiPanel ? '1' : '0','height':height+'px'}">
     <div class="box-wrap">
-        <div class="clearfix" [ngStyle]="{'width':width*2+'px'}">
+        <div class="clearfix" [ngStyle]="{'width':width*2+'px'}" (touchmove)="sildeMorePanel($event)">
             <!-- 'transform': 'translate('+i+'00%,-'+i+'00%)', -->
             <div *ngFor="let btnArr of panelBtns;let i=index" class="panel-container clearfix" style="float:left;" [ngStyle]="{'height':height-40+'px','width':width+'px'}">
                 <div *ngFor="let btn of btnArr;let j=index">
                     <div class="box">
-                        <img src="./assets/images/more-panel/{{btn&&btn[0]}}.png" alt="">
+                        <img (touchmove)="sildeMorePanel($event)" src="./assets/images/more-panel/{{btn&&btn[0]}}.png" alt="">
                         <div class="text">{{btn&&btn[1]}}</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="more-panel-dot">123123</div>
+    <div class="more-panel-dot">
+        <span class="dot" [ngClass]="{'active':morePanelLeft}"></span>
+        <span class="dot" [ngClass]="{'active':!morePanelLeft}"></span>
+    </div>
 </div>

@@ -10,28 +10,40 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class ChatDetailFooterComponent implements OnInit {
 
   constructor(public sanitizer: DomSanitizer) { }
-  @HostListener('touchstart', ['$event.target']) touchstart(btn) {
+  @HostListener('touchstart', ['$event.target', '$event']) touchstart(ele, e) {
     //委托一时爽,但是要排除父元素
-    if (!$(btn).is(".more-panel,.panel-container,.chat-detail-footer,.text,.box,input")) {
-      $(btn).css("background-color", "#E2E2E2");
-      if ($(btn).hasClass("talk")) {
-        $(btn).css("background-color", "#E2E2E2").text("松开 结束");
+    if (!$(ele).is(".more-panel,.panel-container,.chat-detail-footer,.text,.box,input,.more-panel-dot")) {
+      $(ele).css("background-color", "#E2E2E2");
+      if ($(ele).hasClass("talk")) {
+        $(ele).css("background-color", "#E2E2E2").text("松开 结束");
         this.showMicroPhone = true;
       }
     }
   }
-  @HostListener('touchend', ['$event.target']) touchend(btn) {
-    if (!$(btn).is(".more-panel,.panel-container,.chat-detail-footer,.text,.box,input")) {
+  @HostListener('touchend', ['$event.target', '$event']) touchend(ele, e) {
+    if (!$(ele).is(".more-panel,.panel-container,.chat-detail-footer,.text,.box,input,.more-panel-dot")) {
       //小按钮还原回的颜色
-      if ($(btn).parent().is(".chat-detail-footer")) {
-        $(btn).css("background-color", "transparent");
+      if ($(ele).parent().is(".chat-detail-footer")) {
+        $(ele).css("background-color", "transparent");
       } else {//morePanel还原回的颜色
-        $(btn).css("background-color", "#FCFCFC");
+        $(ele).css("background-color", "#FCFCFC");
       }
     }
-    if ($(btn).hasClass("talk")) {
-      $(btn).css("background-color", "transparent").text("按住 说话");
+    if ($(ele).hasClass("talk")) {
+      $(ele).css("background-color", "transparent").text("按住 说话");
       this.showMicroPhone = false;
+    }
+
+    if ($(ele).is(".panel-container,img")) {
+      debugger;
+      if (this.morePanelLeft) {
+        //左
+        $(".box-wrap").animate({ "marginLeft": "0px" }, 200);
+      } else {
+        //右
+        $(".box-wrap").animate({ "marginLeft": "-" + this.width + "px" }, 200);
+      }
+      this.changeList = [];
     }
   }
 
@@ -66,7 +78,7 @@ export class ChatDetailFooterComponent implements OnInit {
   //更多面板的按钮-第二页
   morePanelBtns2: Array<Array<string>> = [];
   //body的宽度
-  width:number=0;
+  width: number = 0;
   @ViewChild('txt') inputTxt: ElementRef;
   ngOnInit() {
 
@@ -80,7 +92,7 @@ export class ChatDetailFooterComponent implements OnInit {
     this.height = this.width * rate;
 
     //解决bug001
-    let count = 0,j=0;
+    let count = 0, j = 0;
     this.morePanelBtns.forEach((val, i) => {
       this.panelBtns[count] = this.panelBtns[count] || [];
       this.panelBtns[count][j] = this.panelBtns[count][j] || [];
@@ -88,7 +100,7 @@ export class ChatDetailFooterComponent implements OnInit {
       j++;
       if ((i + 1) % 8 === 0) {
         count++;
-        j=0;
+        j = 0;
       }
     });
   }
@@ -175,5 +187,36 @@ export class ChatDetailFooterComponent implements OnInit {
       }
     });
     return this.sanitizer.bypassSecurityTrustHtml(this.str);
+  }
+
+  //morePanel的滑动效果
+  changeList: Array<number> = [];
+  //面板的滑动方向
+  morePanelLeft: boolean = true;
+
+  //morePanel的touchmove
+  sildeMorePanel(e) {
+    let x = e.changedTouches[0].clientX;
+    this.changeList.push(x);
+    //判断方向
+    let startX = this.changeList[0];
+    let endX = this.changeList[this.changeList.length - 1]
+    let direction = endX - startX;
+    //$(".box-wrap").css({"transform":"translateX("+direction+"px)"});
+    if (direction <= 0) {//手指划过左半屏
+      //console.log(direction);
+      //marginLeft的计算真是一个令人头疼的算法
+      //TODO:bug:目前左右溢出时滑动的速度不一样
+      //direction/10 后面的这个10纯属瞎猜
+      $(".box-wrap").css({ "marginLeft": parseInt($(".box-wrap").css("marginLeft")) + direction/10 + "px" });
+      if (Math.abs(direction) > 30) {
+        this.morePanelLeft = false;
+      }
+    } else if (direction > 0) {//手指划过右半屏
+      $(".box-wrap").css({ "marginLeft": parseInt($(".box-wrap").css("marginLeft"))+(this.width + direction)/90 + "px" });
+      if (Math.abs(direction) > 30) {
+        this.morePanelLeft = true;
+      }
+    }
   }
 }
