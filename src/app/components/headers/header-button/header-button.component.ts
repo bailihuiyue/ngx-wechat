@@ -1,15 +1,12 @@
-import { Component, OnInit, Input, Output, HostListener, ViewEncapsulation, ViewChild, OnDestroy  } from '@angular/core';
+import { Component, OnInit, Input, Output, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { DisplayIndexMenu } from '../../../redux/indexMenu.redux';
 import { Store } from '@ngrx/store';
-
-import { SkinType } from 'ngx-weui';
-import { ActionSheetService, ActionSheetConfig, ActionSheetComponent } from "ngx-weui/src/actionsheet";
+import { MaskComponent } from '../../../components/mask/mask.component'
 @Component({
   selector: 'app-header-button',
   templateUrl: './header-button.component.html',
-  styleUrls: ['./header-button.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./header-button.component.scss']
 })
 export class HeaderButtonComponent implements OnInit {
 
@@ -18,6 +15,11 @@ export class HeaderButtonComponent implements OnInit {
   @Input() style: string = "";
   @Input() btnColor: string = "";
   status: boolean = false;
+
+  //控制底部菜单的显示与隐藏
+  maskHidden: boolean = true;
+  //maskMenu的数据
+  maskMenu: Array<Array<string>> = [];
   @HostListener('click') onClick() {
     if (this.href === "back") {
       window.history.back();
@@ -29,9 +31,9 @@ export class HeaderButtonComponent implements OnInit {
       }
       //获取redux/store的值
       this.store.select('DisplayIndexMenuReducer').subscribe(data => this.status = data);
-    }else if(this.href ==="redMore"){
-      alert("敬请期待!");
-    }else{
+    } else if (this.href === "redMore") {
+      this.maskHidden = false;
+    } else {
       this.router.navigate([this.href]);
     }
   };
@@ -44,16 +46,16 @@ export class HeaderButtonComponent implements OnInit {
   }
 
   touched(e) {
-    let color="black";
-    if(this.btnColor==="red"){
-      color="#F4AF9C";
+    let color = "black";
+    if (this.btnColor === "red") {
+      color = "#F4AF9C";
     }
     e.currentTarget.style.backgroundColor = color;
   }
   normal(e) {
-    let color="#1D1C1F";
-    if(this.btnColor==="red"){
-      color="#D85940";
+    let color = "#1D1C1F";
+    if (this.btnColor === "red") {
+      color = "#D85940";
     }
     e.currentTarget.style.backgroundColor = color;
   }

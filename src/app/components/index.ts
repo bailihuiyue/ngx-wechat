@@ -10,6 +10,7 @@ import { HeaderButtonComponent } from './headers/header-button/header-button.com
 import { IndexMenuComponent } from './headers/index-menu/index-menu.component';
 import { RedEnvelopeHeaderComponent } from './headers/red-envelope-header/red-envelope-header.component';
 import { RedEnvelopeFooterComponent } from './footers/red-envelope-footer/red-envelope-footer.component';
+import { MaskComponent } from './mask/mask.component';
 @NgModule({
   declarations: [
     ChatListComponent,
@@ -20,7 +21,8 @@ import { RedEnvelopeFooterComponent } from './footers/red-envelope-footer/red-en
     HeaderButtonComponent,
     IndexMenuComponent,
     RedEnvelopeHeaderComponent,
-    RedEnvelopeFooterComponent
+    RedEnvelopeFooterComponent,
+    MaskComponent
   ],
   imports: [
     CommonModule,
