@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, Output, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { DisplayIndexMenu } from '../../../redux/indexMenu.redux';
+import { maskStatus } from '../../../redux/mask.redux';
 import { Store } from '@ngrx/store';
-import { MaskComponent } from '../../../components/mask/mask.component'
 @Component({
   selector: 'app-header-button',
   templateUrl: './header-button.component.html',
@@ -19,7 +19,7 @@ export class HeaderButtonComponent implements OnInit {
   //控制底部菜单的显示与隐藏
   maskHidden: boolean = true;
   //maskMenu的数据
-  maskMenu: Array<Array<string>> = [];
+  maskMenuName: string = "";
   @HostListener('click') onClick() {
     if (this.href === "back") {
       window.history.back();
@@ -32,7 +32,8 @@ export class HeaderButtonComponent implements OnInit {
       //获取redux/store的值
       this.store.select('DisplayIndexMenuReducer').subscribe(data => this.status = data);
     } else if (this.href === "redMore") {
-      this.maskHidden = false;
+      this.store.dispatch({ type: maskStatus.Show });
+      this.maskMenuName="redEnvelope";
     } else {
       this.router.navigate([this.href]);
     }

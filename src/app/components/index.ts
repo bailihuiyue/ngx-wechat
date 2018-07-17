@@ -37,7 +37,8 @@ import { MaskComponent } from './mask/mask.component';
     HeaderButtonComponent,
     IndexMenuComponent,
     RedEnvelopeHeaderComponent,
-    RedEnvelopeFooterComponent
+    RedEnvelopeFooterComponent,
+    MaskComponent
   ]
 })
 export class SharedModule { }

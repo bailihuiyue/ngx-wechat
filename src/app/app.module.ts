@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { RoutingModule } from "./app.router";
-import { WeUiModule } from 'ngx-weui';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -15,6 +14,7 @@ import Services from './services/index';
 
 import { currentPageReducer } from './redux/currentPage.redux';
 import { DisplayIndexMenuReducer } from './redux/indexMenu.redux';
+import { maskStatusReducer } from './redux/mask.redux';
 import { NoMatchComponent } from './pages/no-match/no-match.component';
 
 @NgModule({
@@ -27,9 +27,12 @@ import { NoMatchComponent } from './pages/no-match/no-match.component';
     BrowserModule,
     RoutingModule,
     HttpModule,
-    WeUiModule.forRoot(),
     BrowserAnimationsModule,
-    StoreModule.forRoot({ currentPageReducer, DisplayIndexMenuReducer }),
+    StoreModule.forRoot({
+      currentPageReducer,
+      DisplayIndexMenuReducer,
+      maskStatusReducer
+    }),
     StoreDevtoolsModule.instrument(),
     SharedModule,
     AddressModule
@@ -39,7 +42,8 @@ import { NoMatchComponent } from './pages/no-match/no-match.component';
     {
       provide: 'BASE_CONFIG',
       useValue: {
-        imgUrl: './assets/images/avatar/'
+        imgUrl: './assets/images/avatar/',
+        imgRedEnvelope: './assets/images/redEnvelope/'
       }
     }
   ],
