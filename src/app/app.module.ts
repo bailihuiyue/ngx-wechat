@@ -21,7 +21,7 @@ import { NoMatchComponent } from './pages/no-match/no-match.component';
   declarations: [
     AppComponent,
     ...Pages,
-    NoMatchComponent,
+    NoMatchComponent
   ],
   imports: [
     BrowserModule,

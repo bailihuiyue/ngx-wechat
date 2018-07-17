@@ -28,6 +28,7 @@ export class ChatDetailComponent implements OnInit {
   imgUrl:string="";
   ngOnInit() {
     this.imgUrl=this.config.imgUrl;
+    //获取路由数据
     this.activatedRoute.params.subscribe((params: Params) => {
       this.id = params['id'];
       this.uname = params['uname'];

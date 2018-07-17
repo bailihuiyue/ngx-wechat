@@ -1,0 +1,38 @@
+{
+    "zhangsan": {
+        "weChatNo": "NoBody",
+        "nickName": "富贵在天",
+        "mark": "同学",
+        "phone": "15888888888",
+        "position": "太原",
+        "album": [
+            {
+                "date": "2018/7/17",
+                "pics": [
+                    "1.jpg",
+                    "2.jpg",
+                    "3.jpg"
+                ]
+            }
+        ]
+    },
+    "default": {
+        "weChatNo": "othersA",
+        "nickName": "路人甲",
+        "position": "澳洲",
+        "mark": "",
+        "phone": "",
+        "album": []
+    },
+    "me": {
+        "weChatNo": "luck_man",
+        "nickName": "好命先生",
+        "mark": "",
+        "phone": "",
+        "album": [
+            "me1.jpg",
+            "me2.jpg",
+            "me3.jpg"
+        ]
+    }
+}

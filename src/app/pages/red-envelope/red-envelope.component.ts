@@ -20,6 +20,7 @@ export class RedEnvelopeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    //TODO:info:footer内容到点击右上角按钮提示敬请期待就结束了
   }
 
 }

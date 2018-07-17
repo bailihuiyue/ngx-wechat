@@ -12,7 +12,7 @@
                     <ul>
                         <ng-container *ngFor="let msg of chats">
                             <li *ngIf="msg[0]==='from'; else elseBlock" class="clearfix left">
-                                <img class="avatar" src="{{imgUrl}}{{friendAvatar}}" alt="" />
+                                <img routerLink="/userDetail/{{id}}/{{uname}}/{{friendAvatar}}" class="avatar" src="{{imgUrl}}{{friendAvatar}}" alt="" />
                                 <div class="msg">
                                     <div *ngIf="isImg(msg[1]); else img">
                                         <img class="emoji" src="{{msg[1]}}" alt="" />
@@ -24,7 +24,7 @@
                             </li>
                             <ng-template #elseBlock>
                                 <li class="clearfix right">
-                                    <img class="avatar" src="./assets/images/avatar/me.jpg" alt="" />
+                                    <img routerLink="/userDetail/me" class="avatar" src="./assets/images/avatar/me.jpg" alt="" />
                                     <div class="msg">
                                         <div *ngIf="isImg(msg[1]); else img">
                                             <img class="emoji" src="{{msg[1]}}" alt="" />
