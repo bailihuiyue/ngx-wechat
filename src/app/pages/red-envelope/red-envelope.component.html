@@ -1,18 +1,19 @@
 <app-red-envelope-header></app-red-envelope-header>
 <div class="red-envelope-body">
-    <div class="red-text-container clearfix">
+    <div class="error-tip" [hidden]="!money||money>0&&money <= 200">单个红包金额不可超过200元</div>
+    <div class="red-text-container clearfix" [ngClass]="{'red-text':(money < 0||money>200)}">
         <div class="text" style="float:left;">单个金额</div>
         <div class="text">元</div>
-        <input type="text" placeholder="0.00">
+        <input type="text" placeholder="0.00" [(ngModel)]="money">
     </div>
     <div class="red-text-container clearfix">
         <div class="text" style="float:left;">留言</div>
-        <input name="money" [(ngModel)]="money" type="text" placeholder="恭喜发财,大吉大利" style="padding-right:15px;">
+        <input type="number" placeholder="恭喜发财,大吉大利" style="padding-right:15px;">
     </div>
     <div class="money">
         <span>¥&nbsp;</span>
-        <span>{{money}}</span>
+        <span>{{money||"0.00"}}</span>
     </div>
-    <a class="sendMoney">塞钱进红包</a>
+    <a class="sendMoney" [ngClass]="{'disable':(money <= 0||money>200)}">塞钱进红包</a>
 </div>
 <app-red-envelope-footer></app-red-envelope-footer>

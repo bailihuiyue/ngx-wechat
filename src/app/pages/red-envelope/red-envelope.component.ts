@@ -1,9 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { scaleAndFade } from '../../anim/scale';
 @Component({
   selector: 'app-red-envelope',
   templateUrl: './red-envelope.component.html',
-  styleUrls: ['./red-envelope.component.scss']
+  styleUrls: ['./red-envelope.component.scss'],
+  animations: [scaleAndFade],
+  host: { '[@scaleAndFade]': '' }
 })
 export class RedEnvelopeComponent implements OnInit {
 
@@ -14,7 +16,7 @@ export class RedEnvelopeComponent implements OnInit {
   hrefMore: string = "/more";
   styleMore = { 'position': 'absolute', 'top': '0', 'right': '0px' };
 
-  money: string;
+  money: number;
   constructor() { }
 
   ngOnInit() {

@@ -12,7 +12,6 @@ export class RedEnvelopeHeaderComponent implements OnInit {
   imgMore: string = "../../../assets/images/headers/red/more.png";
   hrefMore: string = "redMore";
   red:string="red";
-  number:number=0.00;
   styleMore = { 'position': 'absolute', 'top': '0', 'right': '0px', 'background-color': '#D85940' };
 
   constructor() { }
