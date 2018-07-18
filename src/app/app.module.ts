@@ -16,7 +16,6 @@ import { currentPageReducer } from './redux/currentPage.redux';
 import { DisplayIndexMenuReducer } from './redux/indexMenu.redux';
 import { maskStatusReducer } from './redux/mask.redux';
 import { NoMatchComponent } from './pages/no-match/no-match.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +42,8 @@ import { NoMatchComponent } from './pages/no-match/no-match.component';
       provide: 'BASE_CONFIG',
       useValue: {
         imgUrl: './assets/images/avatar/',
-        imgRedEnvelope: './assets/images/redEnvelope/'
+        imgRedEnvelope: './assets/images/redEnvelope/',
+        imgBaseUrl:'./assets/images/'
       }
     }
   ],

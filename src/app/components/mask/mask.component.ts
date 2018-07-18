@@ -16,14 +16,27 @@ export class MaskComponent implements OnInit {
   maskMenuName: string;
   maskData: any;
   maskHidden: boolean;
+  imgBaseUrl:string="";
   constructor(@Inject('BASE_CONFIG') private config, private store: Store<number>) { }
   //imgRedEnvelope
   ngOnInit() {
+    this.imgBaseUrl=this.config.imgBaseUrl;
     //使用juqery获取dom来判断当前页面类型,达到快速获取状态的效果,也可使用redux完成同样功能
     if ($(".red-envelope-body").length > 0) {
       this.maskData = [
         ["红包记录"],
         ["帮助中心"]
+      ];
+    }else if($(".user-detail-body").length > 0){
+      this.maskData = [
+        ["设置备注及标签","beizhu"],
+        ["标星朋友","xing"],
+        ["设置朋友圈权限","pengyouquan"],
+        ["发送该名片","fasong"],
+        ["投诉","tousu"],
+        ["加入黑名单","heimingdan"],
+        ["删除","shanchu"],
+        ["添加到桌面","tianjia"],
       ];
     }
     //初始化redux值

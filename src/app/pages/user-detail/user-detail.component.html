@@ -1,3 +1,49 @@
-<p>
-  user-detail works!
-</p>
+<div class="user-detail">
+  <div class="header">
+    <app-header-button [imgSrc]="imgBack" [href]="backHref"></app-header-button>
+    <div class="title">详细资料</div>
+    <app-header-button [imgSrc]="imgMore" [href]="hrefMore" [style]="styleMore"></app-header-button>
+  </div>
+  <div class="body user-detail-body">
+    <div class="content content1 clearfix">
+      <div class="avatar" (touchend)="showLargeAvatar()">
+        <img class="" src="{{imgUrl}}{{avatar}}" alt="">
+      </div>
+      <div class="info-wrap">
+        <div class="info1">
+          <span>{{name}}</span>
+          <img src="{{imgBaseUrl}}sex/{{userDetail?'male':'female'}}.png" alt="" class="sex">
+        </div>
+        <div class="info2">微信号: {{userDetail.weChatNo}}</div>
+        <div class="info3">昵称: {{userDetail.nickName}}</div>
+      </div>
+    </div>
+    <div class="content content2">
+      <div class="info-wrap" *ngIf="userDetail.label&&userDetail.phone else elsetpl">
+        <div class="phone"><span>电话号码</span>{{userDetail.phone}}</div>
+        <hr>
+        <div class="label"><span>标签</span>{{userDetail.label}}</div>
+      </div>
+      <ng-template #elsetpl>
+        <div class="remarks">设置备注和标签</div>
+      </ng-template>
+    </div>
+    <div class="content content3">
+      <div class="area"><span>地区</span>{{userDetail.area}}</div>
+      <hr>
+      <div (touchstart)="touched($event)" (touchend)="normal($event)" class="album"><span>个人相册</span>
+          <img src="{{imgBaseUrl}}/moments/{{img}}" alt="" *ngFor="let img of userDetail.album;let i=index" [hidden]="i>2">
+      </div>
+      <hr>
+      <div class="more"><span>更多</span></div>
+    </div>
+    <div class="content4">
+      <a (touchstart)="touched($event)" (touchend)="normal($event)" class="sendMsg">发消息</a>
+      <a (touchstart)="touched($event)" (touchend)="normal($event)" class="call">视频通话</a>
+    </div>
+  </div>
+</div>
+<div [@scaleTLAnim] class="largeAvatar" *ngIf="showAvatar" (touchend)="closeLargeAvatar()">
+  <img src="{{imgUrl}}{{avatar}}" alt="">
+</div>
+<app-mask></app-mask>

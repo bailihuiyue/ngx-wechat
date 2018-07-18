@@ -1,0 +1,165 @@
+@import '../../../define.scss';
+.user-detail{
+    background-color:#1D1C1F;
+    hr{
+        border:none;
+        padding: 0;
+        margin: 0;
+        height: 0px;
+        border-top: 1px solid $wechat-foot-button-border-light;
+    }
+    .header{
+        .title{
+            position: absolute;
+            top: 0;
+            left: 50px;
+            line-height: 50px;
+            font-size: 26px;
+            color:#fff;
+        }  
+    }
+    .body{
+        position: absolute;
+        top: 50px;
+        background-color: #EBEBEB;
+        width: 100%;
+        bottom:0;
+        .content{
+            background-color: #fff;
+            margin-top: 30px;
+        }
+        .content1{
+            .avatar{
+                height: 70px;
+                width:70px;
+                margin:10px;
+                float: left;
+                img{
+                    width: 100%;
+                }
+            }
+            .info-wrap{
+                float: left;
+                margin: 10px 0 0 20px;
+                .info1{
+                    font-size: 17px;
+                    font-weight: bold;
+                    .sex{
+                        width: 20px;
+                        margin-left: 10px;
+                    }
+                    span,img{
+                        vertical-align: middle;
+                    }
+                }
+                .info2{
+                    color: #ACACAC;
+                    font-size: 14px;
+                }
+                .info3{
+                    color: #ACACAC;
+                    font-size: 14px;
+                }
+            }
+        }
+        .content2{
+            .info-wrap{
+                margin: 0 10px;
+                .phone{
+                    color: #54688B;
+                }
+                .label{
+                    color: #A9A9A9;
+                }
+                .phone,.label{
+                    padding: 10px 0;
+                    font-size: 18px;
+                    span{
+                        font-weight: bold;
+                        margin-right: 10px;
+                        display: inline-block;
+                        width: 100px;
+                        color: #000;
+                    }
+                }
+            }
+            .remarks{
+                font-weight: bold;
+                display: inline-block;
+                color: #000;
+                padding: 10px 0;
+                margin: 0 10px;
+            }
+        }
+        .content3{
+            .area,.album,.more{
+                font-weight: bold;
+                display: inline-block;
+                color: #A9A9A9;
+                padding: 10px 0;
+                margin: 0 10px;
+                font-size: 16px;
+                font-weight: 400;
+            }
+            .album{
+                height: 80px;
+                line-height: 60px;
+                width: 100%;
+                margin: 0;
+                padding-left: 10px;
+                img{
+                    width: 18%;
+                    margin-right: 10px;
+                }
+                span{
+                    vertical-align: top;
+                }   
+            }
+            span{
+                color: #000;
+                display: inline-block;
+                width: 100px;
+                font-size: 18px;
+                font-weight: bold;
+                margin-right: 10px;
+            }       
+        }
+        .content4{
+            text-align: center;
+            background-color: #EBEBEB;
+            padding: 20px 0;
+            a{
+                height: 50px;
+                margin: 20px 10px;
+                display: block;
+                border-radius: 5px;
+                line-height: 50px;
+                font-size: 18px;
+                user-select: none;
+            }
+            .sendMsg{
+                background-color:$wechat-green-btn;
+                color: #fff;
+            }
+            .call{
+                background-color: #fff;
+                color: #000;
+            }
+        }
+    }
+}
+.largeAvatar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    z-index: 1;
+    img{
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

@@ -49,3 +49,21 @@ export const scaleAndFade = trigger('scaleAndFade', [
     animate('300ms', style({ transform: 'scale(0)', opacity: 0 }))
   ])
 ]);
+
+export const scaleTopLeftAnimation = trigger('scaleTLAnim', [
+  state('void', style({
+    'opacity': 0,
+    "transform": "scale(0)",
+    "transform-origin": "60px 100px"
+  })),
+  state(':enter', style({
+    'opacity': 1,
+    "transform": "scale(1)"
+  })),
+  state(':leave', style({
+    'opacity': 0,
+    "transform": "scale(0)"
+  })),
+  transition('void => *', animate('300ms')),
+  transition('* => void', animate('300ms'))
+]);

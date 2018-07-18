@@ -15,14 +15,23 @@
         bottom: 0;
         z-index: 4;
         background-color: #fff;
+        max-height: 70%;
+        overflow-y: scroll;
         .list{
             width: 100%;
             height: 60px;
             line-height: 60px;
             .text{
-                padding-left: 10px;
+                padding-left: 20px;
+                span{
+                    color: #7A7A7A;
+                    font-size: 17px;
+                    vertical-align: middle;
+                }
                 img{
-
+                    vertical-align: middle;
+                    width: 22px;
+                    margin-right: 20px;
                 }
             }
         }

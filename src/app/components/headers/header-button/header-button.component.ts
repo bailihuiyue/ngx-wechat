@@ -12,7 +12,7 @@ export class HeaderButtonComponent implements OnInit {
 
   @Input() imgSrc: string;
   @Input() href: string;
-  @Input() style: string = "";
+  @Input() style: object = { position: "absolute", top: 0, left: 0 };
   @Input() btnColor: string = "";
   status: boolean = false;
 
@@ -31,10 +31,13 @@ export class HeaderButtonComponent implements OnInit {
       }
       //获取redux/store的值
       this.store.select('DisplayIndexMenuReducer').subscribe(data => this.status = data);
-    } else if (this.href === "redMore") {
+    } else if (this.href === "redMore") {//红包的更多(...)按钮
       this.store.dispatch({ type: maskStatus.Show });
-      this.maskMenuName="redEnvelope";
-    } else {
+      this.maskMenuName = "redEnvelope";
+    }else if(this.href === "userDetailMore"){//用户详情页的右上角...按钮
+      this.store.dispatch({ type: maskStatus.Show });
+      this.maskMenuName = "userDetailMore";
+    }else {
       this.router.navigate([this.href]);
     }
   };

@@ -1,10 +1,12 @@
 <div class="mask-wrap" (touchend)="hideMask($event)">
   <div class="mask" *ngIf="!maskHidden" [@maskFade]></div>
   <div class="menuList" *ngIf="!maskHidden" [@sildeUp]>
-    <div class="list" *ngFor="let d of maskData" (touchstart)="touched($event)" (touchend)="normal($event)">
-      <div class="text">
-        <img src="{{d[1]}}" alt="">
-        <span>{{d[0]}}</span>
+    <div class="scroll-wrap">
+      <div class="list" *ngFor="let d of maskData" (touchstart)="touched($event)" (touchend)="normal($event)">
+        <div class="text">
+          <img src="{{imgBaseUrl}}/chat-detail/{{d[1]}}.png" alt="">
+          <span>{{d[0]}}</span>
+        </div>
       </div>
     </div>
   </div>

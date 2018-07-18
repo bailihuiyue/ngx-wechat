@@ -6,7 +6,8 @@ import { ChatDetailRoutingModule } from './user-detail.routing.module';
 @NgModule({
   imports: [
     CommonModule,
-    ChatDetailRoutingModule
+    ChatDetailRoutingModule,
+    SharedModule
   ],
   declarations: [UserDetailComponent]
 })
