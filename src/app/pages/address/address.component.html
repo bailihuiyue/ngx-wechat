@@ -1,1 +1,9 @@
-<div class="index-pages-content">通讯录</div>
+<div class="index-pages-content">
+    <div *ngFor="let usr of contact">
+        {{usr[0]}}
+        <div *ngFor="let u of usr[1]">
+            <img class="avatar" src="{{imgBaseUrl}}avatar/{{u['avatar']}}"> 
+            <div class="name">{{u['name']}}</div>     
+        </div>
+    </div>
+</div>
