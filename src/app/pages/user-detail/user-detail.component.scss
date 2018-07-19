@@ -105,13 +105,21 @@
                 width: 100%;
                 margin: 0;
                 padding-left: 10px;
-                img{
-                    width: 18%;
-                    margin-right: 10px;
-                    vertical-align: middle;
+                min-height: 80px;
+                position: relative;
+                .img-wrap{
+                    position: relative;
+                    left: 110px;
+                    top:5px;
+                    img{
+                        width: 18%;
+                        margin-right: 10px;
+                    }
                 }
                 span{
-                    vertical-align:middle;
+                    position: absolute;
+                    top:50%;
+                    transform: translateY(-50%);
                 }   
             }
             span{

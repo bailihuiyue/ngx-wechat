@@ -20,22 +20,30 @@
     </div>
     <div class="content content2">
       <div class="info-wrap" *ngIf="userDetail.label&&userDetail.phone else elsetpl">
-        <div class="phone"><span>电话号码</span>{{userDetail.phone}}</div>
+        <div class="phone">
+          <span>电话号码</span>{{userDetail.phone}}</div>
         <hr>
-        <div class="label"><span>标签</span>{{userDetail.label}}</div>
+        <div class="label">
+          <span>标签</span>{{userDetail.label}}</div>
       </div>
       <ng-template #elsetpl>
         <div class="remarks">设置备注和标签</div>
       </ng-template>
     </div>
     <div class="content content3">
-      <div class="area"><span>地区</span>{{userDetail.area}}</div>
+      <div class="area">
+        <span>地区</span>{{userDetail.area}}</div>
       <hr>
-      <div (touchstart)="touched($event)" (touchend)="normal($event)" class="album"><span>个人相册</span>
+      <div (touchstart)="touched($event)" (touchend)="normal($event)" class="album">
+        <span>个人相册</span>
+        <div class="img-wrap">
           <img src="{{imgBaseUrl}}/moments/{{img}}" alt="" *ngFor="let img of userDetail.album;let i=index" [hidden]="i>2">
+        </div>
       </div>
       <hr>
-      <div class="more"><span>更多</span></div>
+      <div class="more">
+        <span>更多</span>
+      </div>
     </div>
     <div class="content4">
       <a (touchstart)="touched($event)" (touchend)="normal($event)" class="sendMsg">发消息</a>

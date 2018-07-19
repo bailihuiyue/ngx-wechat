@@ -1,9 +1,15 @@
 <div class="index-pages-content">
-    <div *ngFor="let usr of contact">
-        {{usr[0]}}
-        <div *ngFor="let u of usr[1]">
-            <img class="avatar" src="{{imgBaseUrl}}avatar/{{u['avatar']}}"> 
-            <div class="name">{{u['name']}}</div>     
+    <div class="contact">
+        <div *ngFor="let usr of contact">
+            <div class="label" id="{{usr[0]}}">{{usr[0]}}</div>
+            <div routerLink="/userDetail/{{u.id}}/{{u.name}}/{{u.avatar}}" *ngFor="let u of usr[1]" class="clearfix user-wrap" (touchstart)="grey($event)" (touchend)="normal($event)">
+                <img class="avatar" src="{{imgBaseUrl}}avatar/{{u.avatar}}">
+                <span class="name">{{u.name}}</span>
+                <hr/>
+            </div>
         </div>
+    </div>
+    <div class="touchbar">
+        <a href="#{{anchor}}" *ngFor="let anchor of anchors">{{anchor}}</a>
     </div>
 </div>
