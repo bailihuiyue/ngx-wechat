@@ -1,0 +1,59 @@
+@import '../../../define.scss';
+.index-pages-content{
+    background-color: #F1F1F1;
+}
+.me{
+    height: 100%;
+    /*TODO:info:解决子元素margin-top影响父元素的问题*/
+    padding: 1px 0;
+    .meSetting{
+        height: 80px;
+        .left{
+            width: 60px;
+            float: left;
+            margin-top: 10px;
+        }
+        .middle{
+            float: left;
+            margin-left: 20px;
+            .m1{
+                font-size: 18px;
+                line-height: 30px;
+                margin-top: 10px;
+            }
+            .m2{
+                font-size: 16px;
+                color: #b0b0b0;
+                line-height: 30px;
+            }
+        }
+        .right{
+            float: right;
+            margin-right: 20px;
+            margin-top: 30px;
+        }
+    }
+    hr{
+        border:none;
+        padding: 0;
+        height: 0px;
+        border-top: 1px solid $wechat-foot-button-border-light;
+    }
+    .alone{
+        margin: 20px 0;
+    }
+    .section{
+        padding: 0 20px;
+        line-height: 50px;
+        background-color: #fff;
+        img{
+            width: 25px;
+            vertical-align: middle;
+        }
+        .text{
+            margin-left: 20px;
+            vertical-align: middle;
+            font-size: 18px;
+        }
+    }
+}

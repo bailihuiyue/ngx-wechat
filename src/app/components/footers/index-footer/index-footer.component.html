@@ -11,16 +11,16 @@
     </div>
     <div class="grey-font" [ngStyle]="{'color':indexPage === 'address' ? '#0ABA07' : '' }">通讯录</div>
   </a>
-  <a class="page" (click)="showPage('find',$event)">
+  <a class="page" (click)="showPage('discover',$event)">
     <div>
       <img src="/assets/images/discovery.svg"  alt="">
     </div>
-    <div class="grey-font">发现</div>
+    <div class="grey-font" [ngStyle]="{'color':indexPage === 'discover' ? '#0ABA07' : '' }">发现</div>
   </a>
-  <a class="page" (click)="showPage('my',$event)">
+  <a class="page" (click)="showPage('me',$event)">
     <div>
       <img src="/assets/images/settings.svg" alt="">
     </div>
-    <div class="grey-font">我</div>
+    <div class="grey-font" [ngStyle]="{'color':indexPage === 'me' ? '#0ABA07' : '' }">我</div>
   </a>
 </div>

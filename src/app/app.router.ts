@@ -15,7 +15,9 @@ const router: Routes = [
             { path: 'menu', component: IndexMenuComponent },
             { path: 'chatList', component: ChatListComponent, data: { state: 'INDEX' } },
             //如果懒加载中有公用的组件,必须将组件变成模块再进行导入导出,否则父子模块引用同一组件会报重复引入的问题
-            { path: 'address', loadChildren: './pages/address/address.module#AddressModule', data: { state: 'ADDRESS' } }
+            { path: 'address', loadChildren: './pages/address/address.module#AddressModule', data: { state: 'ADDRESS' } },
+            { path: 'discover', loadChildren: './pages/discover/discover.module#DiscoverModule', data: { state: 'DISCOVER' } },
+            { path: 'me', loadChildren: './pages/me/me.module#MeModule', data: { state: 'ME' } }
         ]
     },
     { path: 'search', loadChildren: './pages/search/search.module#SearchModule', data: { state: 'SEARCH' } },

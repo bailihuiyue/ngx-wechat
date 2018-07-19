@@ -1,0 +1,32 @@
+@import '../../../define.scss';
+.index-pages-content{
+    background-color: #F1F1F1;
+}
+.discover{   
+    height: 100%;
+    /*TODO:info:解决子元素margin-top影响父元素的问题*/
+    padding: 1px 0;
+    hr{
+        border:none;
+        padding: 0;
+        height: 0px;
+        border-top: 1px solid $wechat-foot-button-border-light;
+    }
+    .alone{
+        margin: 20px 0;
+    }
+    .section{
+        padding: 0 20px;
+        line-height: 50px;
+        background-color: #fff;
+        img{
+            width: 30px;
+            vertical-align: middle;
+        }
+        .text{
+            margin-left: 20px;
+            vertical-align: middle;
+            font-size: 18px;
+        }
+    }
+}
