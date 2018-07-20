@@ -1,25 +1,25 @@
 <div class="footer">
   <a class="page" (click)="showPage('chatList',$event)">
     <div>
-      <img src="/assets/images/message.svg" alt="">
+      <img src="/assets/images/footer/index/chat{{indexPage === 'chatList' ? '-active' : ''}}.png" alt="">
     </div>
     <div class="grey-font" [ngStyle]="{'color':indexPage === 'chatList' ? '#0ABA07' : '' }">微信</div>
   </a>
   <a class="page" (click)="showPage('contacts',$event)">
     <div>
-      <img src="/assets/images/contacts.svg" alt="">
+      <img src="/assets/images/footer/index/contacts{{indexPage === 'contacts' ? '-active' : ''}}.png" alt="">
     </div>
     <div class="grey-font" [ngStyle]="{'color':indexPage === 'contacts' ? '#0ABA07' : '' }">通讯录</div>
   </a>
   <a class="page" (click)="showPage('discover',$event)">
     <div>
-      <img src="/assets/images/discovery.svg"  alt="">
+      <img src="/assets/images/footer/index/discover{{indexPage === 'discover' ? '-active' : ''}}.png"  alt="">
     </div>
     <div class="grey-font" [ngStyle]="{'color':indexPage === 'discover' ? '#0ABA07' : '' }">发现</div>
   </a>
   <a class="page" (click)="showPage('me',$event)">
     <div>
-      <img src="/assets/images/settings.svg" alt="">
+      <img src="/assets/images/footer/index/me{{indexPage === 'me' ? '-active' : ''}}.png" alt="">
     </div>
     <div class="grey-font" [ngStyle]="{'color':indexPage === 'me' ? '#0ABA07' : '' }">我</div>
   </a>
