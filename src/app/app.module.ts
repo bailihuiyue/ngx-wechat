@@ -8,7 +8,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 
 import { SharedModule } from './components/index';
-import { AddressModule } from './pages/address/address.module'
+import { ContactsModule } from './pages/contacts/contacts.module'
 import Pages from './pages/index';
 import Services from './services/index';
 
@@ -34,7 +34,7 @@ import { NoMatchComponent } from './pages/no-match/no-match.component';
     }),
     StoreDevtoolsModule.instrument(),
     SharedModule,
-    AddressModule
+    ContactsModule
   ],
   providers: [
     ...Services,

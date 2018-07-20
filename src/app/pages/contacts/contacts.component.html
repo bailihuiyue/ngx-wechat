@@ -1,0 +1,44 @@
+<div class="index-pages-content">
+    <div class="contact">
+        <div class="sec1" id="↑">
+            <div class="alone xindepengyou section" (touchstart)="grey($event)"
+            (touchend)="normal($event)">
+                <img src="{{imgBaseUrl}}contacts/xindepengyou.png" alt="">
+                <span class="text">新的朋友</span>
+                <hr>
+            </div>
+            <div class="qunliao section" (touchstart)="grey($event)"
+            (touchend)="normal($event)">
+                <img src="{{imgBaseUrl}}contacts/qunliao.png" alt="">
+                <span class="text">群聊</span>
+                <hr>
+            </div>
+            <div class="biaoqian section" (touchstart)="grey($event)"
+            (touchend)="normal($event)">
+                <img src="{{imgBaseUrl}}contacts/biaoqian.png" alt="">
+                <span class="text">标签</span>
+                <hr>
+            </div>
+            <div class="gongzhonghao section" (touchstart)="grey($event)"
+            (touchend)="normal($event)">
+                <img src="{{imgBaseUrl}}contacts/gongzhonghao.png" alt="">
+                <span class="text">公众号</span>
+                <hr>
+            </div>
+        </div>
+        <div *ngFor="let usr of contact">
+            <div class="label" id="{{usr[0]}}">{{usr[0]}}</div>
+            <div routerLink="/userDetail/{{u.id}}/{{u.name}}/{{u.avatar}}" *ngFor="let u of usr[1]" class="clearfix user-wrap" (touchstart)="grey($event)"
+                (touchend)="normal($event)">
+                <img class="avatar" src="{{imgBaseUrl}}avatar/{{u.avatar}}">
+                <span class="name">{{u.name}}</span>
+                <hr/>
+            </div>
+        </div>
+    </div>
+    <div class="touchbar" (touchstart)="showLetter($event)" (touchmove)="moveTouchbar($event)" (touchend)="jumpToLetter($event)">
+        <a name="↑">↑</a>
+        <a name="{{anchor}}" *ngFor="let anchor of anchors">{{anchor}}</a>
+    </div>
+    <div [hidden]="hideLetterMask" class="letter">{{letter}}</div>
+</div>

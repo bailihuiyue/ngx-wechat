@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 export const enum CurrentPage {
   Index = 'INDEX',
-  Address = 'ADDRESS',
+  Contacts = 'CONTACTS',
   RESET = 'RESET',
   Search = "SEARCH"
 }
@@ -16,7 +16,7 @@ export function currentPageReducer(state: string, action: { type: string, payloa
   switch (action.type) {
     case CurrentPage.Index:
       return 'index';
-    case CurrentPage.Address:
+    case CurrentPage.Contacts:
       return 'addr';
     case CurrentPage.Search:
       return 'search';
