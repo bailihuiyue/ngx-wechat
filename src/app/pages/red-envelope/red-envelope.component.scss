@@ -38,6 +38,14 @@
             outline: none;
             height: 50px;
             font-weight: bold;
+            @media screen and (max-width: 320px) {
+                width: 100px;
+            }
+        }
+        .leave-word{
+            @media screen and (max-width: 320px) {
+                width: 160px;
+            }
         }
     }
     .red-text{
