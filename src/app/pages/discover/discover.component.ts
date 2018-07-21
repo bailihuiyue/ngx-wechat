@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { rightInLeftLeave } from '../../anim/translateX';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-discover',
   templateUrl: './discover.component.html',
@@ -9,7 +10,7 @@ import { rightInLeftLeave } from '../../anim/translateX';
 })
 export class DiscoverComponent implements OnInit {
 
-  constructor(@Inject('BASE_CONFIG') private config) { }
+  constructor(@Inject('BASE_CONFIG') private config,private router: Router) { }
   imgBaseUrl: string = "";
   ngOnInit() {
     this.imgBaseUrl = this.config.imgBaseUrl;
@@ -18,6 +19,9 @@ export class DiscoverComponent implements OnInit {
   grey(e) {
     if (e.target.className.indexOf("section") >= 0) {
       e.target.style.backgroundColor = "#E2E2E2";
+    }
+    if(e.target.className.indexOf("pengyouquan") >= 0){
+      this.router.navigateByUrl('/moments/me');
     }
   }
   normal(e) {

@@ -37,6 +37,8 @@ export class HeaderButtonComponent implements OnInit {
     }else if(this.href === "userDetailMore"){//用户详情页的右上角...按钮
       this.store.dispatch({ type: maskStatus.Show });
       this.maskMenuName = "userDetailMore";
+    }else if(this.href === "others"){
+      alert('敬请期待');
     }else {
       this.router.navigate([this.href]);
     }
@@ -53,6 +55,8 @@ export class HeaderButtonComponent implements OnInit {
     let color = "black";
     if (this.btnColor === "red") {
       color = "#F4AF9C";
+    }else if(this.btnColor==="transparent"){
+      color = "#ffffff40";
     }
     e.currentTarget.style.backgroundColor = color;
   }
@@ -60,6 +64,9 @@ export class HeaderButtonComponent implements OnInit {
     let color = "#1D1C1F";
     if (this.btnColor === "red") {
       color = "#D85940";
+    }else if(this.btnColor==="transparent"){
+      color = "transparent";
+      e.currentTarget.style.opacity = "1";
     }
     e.currentTarget.style.backgroundColor = color;
   }

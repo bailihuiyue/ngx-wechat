@@ -1,3 +1,17 @@
-<p>
-  朋友圈
-</p>
+<div class="moments">
+  <div class="header">
+    <app-header-button btnColor="transparent" [imgSrc]="imgBack" [style]='styleBack' [href]="backHref"></app-header-button>
+    <app-header-button btnColor="transparent" *ngIf="id==='me'" [imgSrc]="imgCamera" [href]="hrefCamera" [style]="styleCamera"></app-header-button>
+  </div>
+  <div class="body">
+    <img class="bg" src="{{imgBaseUrl}}moments/{{moments.bg}}" alt="">
+    <div [ngSwitch]="id">
+      <!-- 这里有一个坑,如果ngSwitchCase的值是一个字符串,那么就要用单引号'包含起来 -->
+      <div *ngSwitchCase="'me'">me</div>
+      <!-- 无朋友圈 -->
+      <div *ngSwitchCase="'other'">default</div>
+      <!-- 其他:类似于张三的那种 -->
+      <div *ngSwitchDefault>张三</div>
+    </div>
+  </div>
+</div>
