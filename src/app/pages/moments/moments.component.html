@@ -5,13 +5,63 @@
   </div>
   <div class="body">
     <img class="bg" src="{{imgBaseUrl}}moments/{{moments.bg}}" alt="">
-    <div [ngSwitch]="id">
-      <!-- 这里有一个坑,如果ngSwitchCase的值是一个字符串,那么就要用单引号'包含起来 -->
-      <div *ngSwitchCase="'me'">me</div>
-      <!-- 无朋友圈 -->
-      <div *ngSwitchCase="'other'">default</div>
-      <!-- 其他:类似于张三的那种 -->
-      <div *ngSwitchDefault>张三</div>
+    <div class="user-avatar">
+      <div class="nickName" [ngStyle]="{'top':avatarTop-30+'px'}">{{name}}</div>
+      <img src="{{imgBaseUrl}}avatar/{{avatar}}" routerLink="/userDetail/{{id}}/{{name}}/{{avatar}}" alt="" [ngStyle]="{'top':avatarTop-50+'px'}">
+    </div>
+    <div class="moment-items">
+      <div class="moment clearfix" *ngFor="let item of moments.moments">
+        <div class="clearfix">
+          <div *ngIf="id==='me' else elseTemplate">
+            <img class="moment-avatar left" routerLink="/userDetail/{{item.id}}/{{item.name}}/{{item.avatar}}" src="{{imgBaseUrl}}avatar/{{item.avatar}}"
+              (touched)="jumpToUserDetail()" />
+          </div>
+          <ng-template #elseTemplate>
+            <div class="others left">
+              <div class="time">
+                <span class="time0">{{item.time[0]}}</span>
+                <span class="time1" *ngIf="item.time[1]">
+                    {{item.time[1]}}月
+                </span>
+              </div>
+              <div class="area">{{item.area}}</div>
+            </div>
+          </ng-template>
+          <div class="left second">
+            <div class="uname">{{item.name}}</div>
+            <!-- TODO:info:这里有一个坑,如果ngSwitchCase的值是一个字符串,那么就要用单引号'包含起来 -->
+            <div [ngSwitch]="item.type">
+              <div *ngSwitchCase="'img'">
+                <img class="item-img" src="{{imgBaseUrl}}moments/{{item.item}}" alt="">
+              </div>
+              <div *ngSwitchCase="'imgs'" class="clearfix">
+                <img class="imgGroup" *ngFor="let pic of item.item" src="{{imgBaseUrl}}moments/{{pic}}" />
+              </div>
+              <div *ngSwitchCase="'text'" class="text">
+                {{item.item}}
+              </div>
+              <div *ngSwitchCase="'news'" class="clearfix news">
+                <img class="left" src="{{imgBaseUrl}}moments/{{item.thumb}}" alt="">
+                <div class="text left">{{item.item}}</div>
+              </div>
+              <div *ngSwitchDefault></div>
+            </div>
+            <div [hidden]="id!=='me'">
+              <div class="time left">{{item.time}}</div>
+              <div class="button right">
+                <img src="{{imgBaseUrl}}moments/comment.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div [hidden]="id==='me'">
+            <div style="width:100%;height:20px"></div>
+          </div>
+        <div [hidden]="id!=='me'">
+          <hr>
+        </div>
+      </div>
+      <div [hidden]="id=='me'" class="momoent-end">- 朋友仅展示最近三天的朋友圈 -</div>
     </div>
   </div>
 </div>

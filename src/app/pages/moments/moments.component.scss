@@ -1,3 +1,4 @@
+@import '../../../define.scss';
 .moments{
     .header{
         background-color: transparent;
@@ -6,5 +7,116 @@
         .bg{
             width: 100%;
         }
+        .user-avatar{
+            .nickName{
+                position: absolute;
+                right: 110px;
+                font-weight: bold;
+                color: #fff;
+            }
+            img{
+                width: 80px;
+                padding: 2px;
+                border: 1px solid #C0C0C880;
+                position: absolute;
+                right: 15px;
+                background-color: #fff;
+            }
+        }
+        .moment-items{
+            margin-top: 30px;
+            .moment{
+                .moment-avatar{
+                    width: 15%;
+                    margin: 3%;   
+                }
+                .uname{
+                    margin-bottom: 5px;
+                    color: #778298;
+                    margin-top: 10px;
+                    font-size: 18px;
+                }
+                .item-img{
+                    width: 200px;
+                }
+                .second{
+                    width: 75%;
+                }
+                .time{
+                    color: $wechat-foot-button-text;
+                    margin-top: 10px;
+                }
+                .button{
+                    margin-top: 10px;
+                    img{
+                        width: 20px;
+                        vertical-align: middle;
+                    }
+                }
+                
+                .imgGroup{
+                    width: 38%;
+                    margin: 1%;
+                    display: block;
+                    float: left;
+                }
+                .news{
+                    background-color: #f3f3f3;
+                    height: 50px;
+                    img{
+                        width: 13%;
+                        height: 40px;
+                        margin: 2%;
+                    }
+                    .text{
+                        width: 80%;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;
+                        overflow: hidden;
+                    }
+                }
+                .text{
+                    background-color: #f3f3f3;
+                    font-size: 14px;
+                    margin-top: 10px;
+                }
+                .others{
+                    margin-right: 10px;
+                    margin-left: 10px;
+                    .time{
+                        font-size: 20px;
+                        color: #000;
+                        span{
+                            text-align: left;
+                        }
+                        .time1{
+                            font-size: 14px;
+                        }
+                    }
+                    .area{
+                        font-size: 14px;
+                        color: #878787;
+                    }
+                }
+            }
+            .momoent-end{
+                text-align: center;
+                font-size: 14px;
+                color: $wechat-foot-button-text;
+                margin: 20px 0;
+            }
+        }
+        .left-section{
+            float: left;
+        }
     }
+}
+
+hr{
+    margin: 10px 0;
+    border:none;
+    padding: 0;
+    height: 0px;
+    border-top: 1px solid $wechat-foot-button-border-light;
 }

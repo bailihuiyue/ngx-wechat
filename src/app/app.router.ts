@@ -24,7 +24,7 @@ const router: Routes = [
     { path: 'chatDetail/:id/:uname/:avatar', loadChildren: './pages/chat-detail/chat-detail.module#ChatDetailModule', data: { state: 'CHAT_DETAIL' } },
     { path: 'redEnvelope', loadChildren: './pages/red-envelope/red-envelope.module#RedEnvelopeModule', data: { state: 'RED_ENVELOPE' } },
     { path: 'userDetail/:id/:name/:avatar', loadChildren: './pages/user-detail/user-detail.module#UserDetailModule', data: { state: 'USER_DETAIL' } },
-    { path: 'moments/:id', loadChildren: './pages/moments/moments.module#MomentsModule', data: { state: 'MOMENT' } },
+    { path: 'moments/:id/:name/:avatar', loadChildren: './pages/moments/moments.module#MomentsModule', data: { state: 'MOMENT' } },
     { path: '**', component: NoMatchComponent, data: { state: 'noMatch' } }
 ];
 

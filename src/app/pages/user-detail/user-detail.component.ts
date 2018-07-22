@@ -29,9 +29,9 @@ export class UserDetailComponent implements OnInit {
 
   imgBaseUrl: string;
   userDetail: object = {};
-
   //放大头像
   showAvatar: boolean = false;
+  
   ngOnInit() {
     this.imgUrl = this.config.imgUrl;
     this.imgBaseUrl = this.config.imgBaseUrl;
@@ -68,7 +68,7 @@ export class UserDetailComponent implements OnInit {
     let ele = $(e.currentTarget), color, fontColor;
     if (ele.is(".album")) {
       color = "#FFFFFF";
-      this.router.navigateByUrl("/moments/" + this.id);
+      this.router.navigateByUrl("/moments/" + this.id+"/"+this.name+"/"+this.avatar);
     } else if (ele.is(".sendMsg")) {
       color = "#1AAC19";
       fontColor = "#fff";

@@ -21,7 +21,7 @@ export class DiscoverComponent implements OnInit {
       e.target.style.backgroundColor = "#E2E2E2";
     }
     if(e.target.className.indexOf("pengyouquan") >= 0){
-      this.router.navigateByUrl('/moments/me');
+      this.router.navigateByUrl('/moments/me/好命先生/me.jpg');
     }
   }
   normal(e) {
