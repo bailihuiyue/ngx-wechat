@@ -50,7 +50,7 @@ export class MomentsComponent implements OnInit {
         let self=this;
         setTimeout(function () {
           self.avatarTop = $(".bg").height();
-        },100);
+        },120);
       });
     });
   }
