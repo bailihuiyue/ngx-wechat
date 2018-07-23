@@ -64,3 +64,23 @@ export const leftInRightLeave = trigger('leftInRightLeave', [
         animate('200ms', style({ transform: 'translateX(100%)' }))
     ])
 ]);
+
+export const changeCheckBoxStatus = trigger('changeCheckBoxStatus', [
+    state('uncheck', style({ "background-color": "#989898" })),
+    state('checked', style({ "background-color": "#1AAC19" })),
+    transition('uncheck => checked', [
+        query('.chat-btn', animate(150, style({ 'transform': 'translateX(25px)' })), { optional: true }),
+    ]),
+    transition('checked => uncheck', [
+        query('.chat-btn', animate(150, style({ 'transform': 'translateX(0)' })), { optional: true }),
+    ])
+]);
+
+// TODO:bug:解决angular 无法保持query出来的元素状态的问题:https://github.com/angular/angular/issues/18775
+//Allow state queries within animations: state('x', query(...))
+//目前angular动画是靠state保持的最终状态,而transition只是过渡动画,动画完后会还原到动画之前的状态
+//但是query的元素无法保持状态因为state只能支持style而无法支持query 尴尬啊
+export const changeCheckBoxBtnStatus = trigger('changeCheckBoxBtnStatus', [
+    state('uncheck', style({ 'transform': 'translateX(0px)' })),
+    state('checked', style({ 'transform': 'translateX(25px)' })),
+]);

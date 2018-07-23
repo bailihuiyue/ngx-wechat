@@ -21,10 +21,11 @@ const router: Routes = [
         ]
     },
     { path: 'search', loadChildren: './pages/search/search.module#SearchModule', data: { state: 'SEARCH' } },
-    { path: 'chatDetail/:id/:uname/:avatar', loadChildren: './pages/chat-detail/chat-detail.module#ChatDetailModule', data: { state: 'CHAT_DETAIL' } },
+    { path: 'chatDetail/:id/:uname/:avatar/:unread', loadChildren: './pages/chat-detail/chat-detail.module#ChatDetailModule', data: { state: 'CHAT_DETAIL' } },
     { path: 'redEnvelope', loadChildren: './pages/red-envelope/red-envelope.module#RedEnvelopeModule', data: { state: 'RED_ENVELOPE' } },
     { path: 'userDetail/:id/:name/:avatar', loadChildren: './pages/user-detail/user-detail.module#UserDetailModule', data: { state: 'USER_DETAIL' } },
     { path: 'moments/:id/:name/:avatar', loadChildren: './pages/moments/moments.module#MomentsModule', data: { state: 'MOMENT' } },
+    { path: 'userSetting/:id/:name/:avatar', loadChildren: './pages/user-setting/user-setting.module#UserSettingModule', data: { state: 'USER_SETTING' } },
     { path: '**', component: NoMatchComponent, data: { state: 'noMatch' } }
 ];
 

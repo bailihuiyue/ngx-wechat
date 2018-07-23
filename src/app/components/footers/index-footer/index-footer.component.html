@@ -1,6 +1,7 @@
 <div class="footer">
   <a class="page" (click)="showPage('chatList',$event)">
     <div>
+      <div class="unread-tip" style="display:none"></div>
       <img src="/assets/images/footer/index/chat{{indexPage === 'chatList' ? '-active' : ''}}.png" alt="">
     </div>
     <div class="grey-font" [ngStyle]="{'color':indexPage === 'chatList' ? '#0ABA07' : '' }">微信</div>
@@ -13,7 +14,7 @@
   </a>
   <a class="page" (click)="showPage('discover',$event)">
     <div>
-      <img src="/assets/images/footer/index/discover{{indexPage === 'discover' ? '-active' : ''}}.png"  alt="">
+      <img src="/assets/images/footer/index/discover{{indexPage === 'discover' ? '-active' : ''}}.png" alt="">
     </div>
     <div class="grey-font" [ngStyle]="{'color':indexPage === 'discover' ? '#0ABA07' : '' }">发现</div>
   </a>

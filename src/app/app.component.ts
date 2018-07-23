@@ -8,16 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  // constructor(
-  //   private router: Router,
-  //   private activatedRoute: ActivatedRoute
-  // ) { }
-  //ngOnInit() {
-    //记录路由历史记录,等价于window.history,故使用原生js
+  constructor(
+    // private router: Router,
+    // private activatedRoute: ActivatedRoute
+  ) { }
+  ngOnInit() {
+    // 记录路由历史记录,等价于window.history,故使用原生js
     // this.router.events.pipe(
     //   filter((event) => event instanceof NavigationEnd)
     // ).subscribe((event: NavigationEnd) => {
     //   console.log(event);
     // });
-  //}
+    // 系统启动时清除上次的未读数据
+    localStorage.removeItem("unread");
+  }
 }

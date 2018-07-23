@@ -78,8 +78,9 @@ body{
 app-chat-detail{
     overflow: hidden;
 }
-
-
+app-user-setting{
+    background-color: $wechat-body-background;
+}
 /*对应bug001*/
 .panel-container{
     border-top: 1px solid $wechat-foot-button-border-light;
@@ -101,4 +102,27 @@ app-chat-detail{
             font-size: 14px;
         }
     }
+}
+// 未读提示
+.unread-tip{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    background-color: red;
+    top: 5px;
+    left: 50px;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+}
+.unread-small{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: $wechat-tip-red;
+    top: 5px;
+    left: 54px;
+    border-radius: 50%;
 }

@@ -1,0 +1,16 @@
+@import '../../../define.scss';
+.check-box{
+    width: 55px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: $wechat-foot-button-border;
+    padding: 3px;
+    position: relative;
+    .chat-btn{
+        width: 24px;
+        height: 24px;
+        background-color: #fff;
+        border-radius: 50%;
+        position: relative;
+    }
+}

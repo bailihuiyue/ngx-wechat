@@ -1,0 +1,88 @@
+@import '../../../define.scss';
+.user-setting{
+    position: absolute;
+    top: 50px;
+    width:100%;
+    background-color: $wechat-body-background;
+    .header{
+        .title{
+            position: absolute;
+            top: 0;
+            left: 50px;
+            line-height: 50px;
+            font-size: 26px;
+            color:#fff;
+        }  
+    }
+    .body{
+        height: 100%;
+        /*TODO:info:解决子元素margin-top影响父元素的问题*/
+        padding: 1px 0;
+        .userSetting{
+            height: 80px;
+            .avatar,.add{
+                width: 40px;
+                margin-top: 10px;
+                margin-right: 20px;
+                border: 1px solid $wechat-foot-button-border-light;
+                display: block;
+            }
+            .add{
+                padding: 10px;
+            }
+            .avatar-wrap{
+                height: 100%;
+            }
+            .name{
+                height: 25px;
+                font-size: 12px;
+                line-height: 25px;
+                text-align: center;
+                width: 40px;
+                color: $wechat-foot-button-text;
+            }
+        }
+        hr{
+            border:none;
+            padding: 0;
+            height: 0px;
+            border-top: 1px solid $wechat-foot-button-border-light;
+        }
+        .alone{
+            margin: 20px 0;
+        }
+        .section{
+            padding: 0 20px;
+            line-height: 50px;
+            background-color: #fff;
+            .text{
+                vertical-align: middle;
+                font-size: 16px;
+            }
+            app-chekbox{
+                float: right;
+                margin-top: 13px
+            }
+        }
+        .xiaochengxu{
+            position: relative;
+            img{
+                width: 27px;
+                padding: 3px;
+                border-radius: 50%;
+                position: absolute;
+                top: 13px;
+                background-color: #fff;
+            }
+            .x1{
+                right: 0px;
+            }
+            .x2{
+                right: 15px;
+            }
+            .x3{
+                right: 30px;
+            }
+        }
+    }
+}

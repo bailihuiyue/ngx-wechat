@@ -1,8 +1,9 @@
 <div>
     <div class="chat-list index-pages-content">
-        <a *ngFor="let user of userList$ | async; let i = index;" class="chat-item" (touchstart)="changeBackground($event)" (touchend)="backgroundNormal($event)"
-            [routerLink]="['/chatDetail',user.id,user.name,user.avatar]">
-            <div class="clearfix">
+        <a *ngFor="let user of userList; let i = index;" class="chat-item" [ngClass]="{'zhiding':user.zhiding}" [routerLink]="['/chatDetail',user.id,user.name,user.avatar,user.unread]">
+            <div class="clearfix item-core" (touchstart)="changeBackground($event)" (touchend)="backgroundNormal($event)">
+                <div [hidden]="user.unread<=0||user.miandarao" class="unread-tip">{{user.unread}}</div>
+                <div [hidden]="user.unread<=0||!user.miandarao" class="unread-small"></div>
                 <img src="{{imgUrl}}{{user.avatar}}" alt="">
                 <div class="chat-row">
                     <div class="font-18 bold black-font">{{user.name}}</div>

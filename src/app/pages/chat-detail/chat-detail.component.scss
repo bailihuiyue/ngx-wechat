@@ -27,6 +27,9 @@
             width: 50px;
             margin: 10px;
         }
+        .clearfix.left,.clearfix.right{
+            width:100%;
+        }
         .left{
             .msg{
                 float:left;

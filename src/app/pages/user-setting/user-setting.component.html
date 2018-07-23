@@ -1,0 +1,44 @@
+<div class="user-setting">
+  <div class="header">
+    <app-header-button [imgSrc]="imgBack" [href]="backHref"></app-header-button>
+    <div class="title">详细资料</div>
+  </div>
+  <div class="body" (touchstart)="grey($event)" (touchend)="normal($event)">
+    <div class="userSetting clearfix section alone">
+      <div class="left avatar-wrap">
+        <img  class="avatar" src="{{imgBaseUrl}}avatar/{{avatar}}" routerLink="/userDetail/{{id}}/{{name}}/{{avatar}}" />
+        <div class="name">{{name}}</div>
+      </div>
+      <img class="left add" src="{{imgBaseUrl}}add.svg" alt="">
+    </div>
+    <div class="alone section">
+      <span class="text">聊天小程序</span>
+      <span class="right xiaochengxu clearfix">
+        <img class="x1" src="{{imgBaseUrl}}userSetting/taobao.png" alt="">
+        <img class="x2" src="{{imgBaseUrl}}userSetting/eleme.png" alt="">
+        <img class="x3" src="{{imgBaseUrl}}userSetting/wangyi.png" alt="">
+      </span>
+    </div>
+    <div class="alone section">
+      <span class="text">查找聊天记录</span>
+    </div>
+    <div class="section">
+      <span class="text">置顶聊天</span>
+      <app-chekbox [operate]="'zhiding'" [uid]="id"></app-chekbox>
+      <hr>
+    </div>
+    <div class="section">
+      <span class="text">消息免打扰</span>
+      <app-chekbox [operate]="'miandarao'" [uid]="id"></app-chekbox>
+    </div>
+    <div class="alone section">
+      <span class="text">设置当前聊天背景</span>
+    </div>
+    <div class="alone section">
+      <span class="text">清空聊天记录</span>
+    </div>
+    <div class="alone section">
+        <span class="text">投诉</span>
+      </div>
+  </div>
+</div>

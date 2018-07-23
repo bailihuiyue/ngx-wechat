@@ -1,26 +1,35 @@
-.chat-item{
-    width: 100%;
-    border-bottom: 1px solid #F0F0F0;
-    display: block;
-    img{
-        width: 50px;
-        float: left;
-        border-radius: 5px;
-        margin-right: 10px;
+@import '../../../define.scss';
+.chat-list{
+    .zhiding{
+        background-color: $wechat-body-background;
     }
-    .chat-row{
-        float: left;
-        width: 40%;
-    }
-    .chat-time{
-        float: right;
-    }
-    hr{
+    .chat-item{
         width: 100%;
-        margin-top: 10px;
-        height: 1px;
-    }
-    .clearfix{
-        padding: 10px;
+        border-bottom: 1px solid #F0F0F0;
+        display: block;
+        img{
+            width: 50px;
+            float: left;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .chat-row{
+            float: left;
+            width: 40%;
+        }
+        .chat-time{
+            float: right;
+        }
+        hr{
+            width: 100%;
+            margin-top: 10px;
+            height: 1px;
+        }
+        .clearfix{
+            padding: 10px;
+        }
+        .item-core{
+            position: relative;
+        }
     }
 }

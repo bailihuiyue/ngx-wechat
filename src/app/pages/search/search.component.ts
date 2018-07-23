@@ -26,4 +26,10 @@ export class SearchComponent implements OnInit {
   changeGrey(e){
     e.target.style.backgroundColor="#B6B6B6";
   }
+  reset(){
+    localStorage.removeItem("unread");
+    localStorage.removeItem("zhiding");
+    localStorage.removeItem("miandarao");
+    $("input").css("color","red").val("所有操作已重置");
+  }
 }
