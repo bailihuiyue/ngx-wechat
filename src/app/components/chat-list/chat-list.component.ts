@@ -49,7 +49,7 @@ export class ChatListComponent implements OnInit {
       }
       if (allUnread > 0) {
         //懒得使用jquery进行redux通知了,使用jquery直接操作dom
-        $(".unread-tip").eq(0).css("display", "block").text(allUnread);
+        $(".unread-tip").css("display", "block").text(allUnread);
       }
       this.userList = zhidingArr.concat(nozhidingArr);
     });
