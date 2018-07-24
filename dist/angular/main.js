@@ -496,9 +496,9 @@ var AppModule = /** @class */ (function () {
                 {
                     provide: 'BASE_CONFIG',
                     useValue: {
-                        imgUrl: '/assets/images/avatar/',
-                        imgRedEnvelope: '/assets/images/redEnvelope/',
-                        imgBaseUrl: '/assets/images/'
+                        imgUrl: './assets/images/avatar/',
+                        imgRedEnvelope: './assets/images/redEnvelope/',
+                        imgBaseUrl: './assets/images/'
                     }
                 }
             ]),
@@ -1151,10 +1151,10 @@ var IndexHeaderComponent = /** @class */ (function () {
     function IndexHeaderComponent(router) {
         this.router = router;
         this.is_index = true;
-        this.imgAdd = "/assets/images/add.svg";
+        this.imgAdd = "../../../assets/images/add.svg";
         this.addHref = "showMenu";
         this.addStyle = { 'position': 'absolute', 'top': '0', 'right': '0px' };
-        this.imgSearch = "/assets/images/find.svg";
+        this.imgSearch = "../../../assets/images/find.svg";
         this.SearchHref = "/search";
         this.SearchStyle = { 'position': 'absolute', 'top': '0', 'right': '55px' };
     }
@@ -1310,10 +1310,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var RedEnvelopeHeaderComponent = /** @class */ (function () {
     function RedEnvelopeHeaderComponent() {
-        this.imgBack = "/assets/images/headers/red/back.png";
+        this.imgBack = "../../../assets/images/headers/red/back.png";
         this.backHref = "back";
         this.s = { 'background-color': '#D85940' };
-        this.imgMore = "/assets/images/headers/red/more.png";
+        this.imgMore = "../../../assets/images/headers/red/more.png";
         this.hrefMore = "redMore";
         this.red = "red";
         this.styleMore = { 'position': 'absolute', 'top': '0', 'right': '0px', 'background-color': '#D85940' };

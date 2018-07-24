@@ -19,7 +19,7 @@
             ["to","嘛"],
             ["from","借我点钱"],
             ["to","哦"],
-            ["from","/assets/images/emoji/thanks.gif"]
+            ["from","./assets/images/emoji/thanks.gif"]
         ]
     },
     "default":{
