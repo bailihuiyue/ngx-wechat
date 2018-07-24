@@ -179,7 +179,7 @@ export class ChatDetailFooterComponent implements OnInit {
         this.str += '<div class="panel-container clearfix" style="position:absolute;top:0;right:' + i / 8 + '00%">';
       }
       this.str += '<div class="box">' +
-        '<img src="/assets/images/more-panel/' + val[0] + '.png" alt="">' +
+        '<img src="./assets/images/more-panel/' + val[0] + '.png" alt="">' +
         '<div class="text">' + val[1] + '</div>' +
         '</div>';
       if ((i + 1) % 8 === 0) {

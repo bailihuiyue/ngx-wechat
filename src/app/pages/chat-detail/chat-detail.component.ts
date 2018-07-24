@@ -13,10 +13,10 @@ import * as $ from 'jquery';
 export class ChatDetailComponent implements OnInit {
 
   constructor(@Inject('BASE_CONFIG') private config, private activatedRoute: ActivatedRoute, private userService$: UsersService) { }
-  imgBack: string = "/assets/images/headers/back.png";
+  imgBack: string = "../../../assets/images/headers/back.png";
   backHref: string = "/index";
 
-  imgMore: string = "/assets/images/headers/more.png";
+  imgMore: string = "../../../assets/images/headers/more.png";
   hrefMore: string = "";
   styleMore = { 'position': 'absolute', 'top': '0', 'right': '0px' };
 
