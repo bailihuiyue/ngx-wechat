@@ -41,9 +41,9 @@ import { NoMatchComponent } from './pages/no-match/no-match.component';
     {
       provide: 'BASE_CONFIG',
       useValue: {
-        imgUrl: './assets/images/avatar/',
-        imgRedEnvelope: './assets/images/redEnvelope/',
-        imgBaseUrl:'./assets/images/'
+        imgUrl: '/assets/images/avatar/',
+        imgRedEnvelope: '/assets/images/redEnvelope/',
+        imgBaseUrl:'/assets/images/'
       }
     }
   ],

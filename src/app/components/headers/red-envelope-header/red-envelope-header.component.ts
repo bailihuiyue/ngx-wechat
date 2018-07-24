@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RedEnvelopeHeaderComponent implements OnInit {
 
-  imgBack: string = "../../../assets/images/headers/red/back.png";
+  imgBack: string = "/assets/images/headers/red/back.png";
   backHref: string = "back";
   s = { 'background-color': '#D85940' };
-  imgMore: string = "../../../assets/images/headers/red/more.png";
+  imgMore: string = "/assets/images/headers/red/more.png";
   hrefMore: string = "redMore";
   red:string="red";
   styleMore = { 'position': 'absolute', 'top': '0', 'right': '0px', 'background-color': '#D85940' };
