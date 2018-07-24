@@ -15,9 +15,9 @@ export class UserDetailComponent implements OnInit {
   constructor(@Inject('BASE_CONFIG') private config, private router: Router, private activatedRoute: ActivatedRoute, private userService$: UsersService) { }
 
   //app-header-button
-  imgBack: string = "../../../assets/images/headers/back.png";
+  imgBack: string = "./assets/images/headers/back.png";
   userDetailHref: string = "back";
-  imgMore: string = "../../../assets/images/headers/more.png";
+  imgMore: string = "./assets/images/headers/more.png";
   hrefMore: string = "userDetailMore";
   styleMore = { 'position': 'absolute', 'top': '0', 'right': '0px' };
 

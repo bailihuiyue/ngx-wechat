@@ -3,26 +3,26 @@
     <div>
       <div class="unread-wrap">
         <div class="unread-tip" style="display:none" [ngStyle]="{'display':unread>0?'block':'none'}">{{unread}}</div>
-        <img src="/assets/images/footer/index/chat{{indexPage === 'chatList' ? '-active' : ''}}.png" alt="">
+        <img src="./assets/images/footer/index/chat{{indexPage === 'chatList' ? '-active' : ''}}.png" alt="">
       </div>
     </div>
     <div class="grey-font" [ngStyle]="{'color':indexPage === 'chatList' ? '#0ABA07' : '' }">微信</div>
   </a>
   <a class="page" (click)="showPage('contacts',$event)">
     <div>
-      <img src="/assets/images/footer/index/contacts{{indexPage === 'contacts' ? '-active' : ''}}.png" alt="">
+      <img src="./assets/images/footer/index/contacts{{indexPage === 'contacts' ? '-active' : ''}}.png" alt="">
     </div>
     <div class="grey-font" [ngStyle]="{'color':indexPage === 'contacts' ? '#0ABA07' : '' }">通讯录</div>
   </a>
   <a class="page" (click)="showPage('discover',$event)">
     <div>
-      <img src="/assets/images/footer/index/discover{{indexPage === 'discover' ? '-active' : ''}}.png" alt="">
+      <img src="./assets/images/footer/index/discover{{indexPage === 'discover' ? '-active' : ''}}.png" alt="">
     </div>
     <div class="grey-font" [ngStyle]="{'color':indexPage === 'discover' ? '#0ABA07' : '' }">发现</div>
   </a>
   <a class="page" (click)="showPage('me',$event)">
     <div>
-      <img src="/assets/images/footer/index/me{{indexPage === 'me' ? '-active' : ''}}.png" alt="">
+      <img src="./assets/images/footer/index/me{{indexPage === 'me' ? '-active' : ''}}.png" alt="">
     </div>
     <div class="grey-font" [ngStyle]="{'color':indexPage === 'me' ? '#0ABA07' : '' }">我</div>
   </a>

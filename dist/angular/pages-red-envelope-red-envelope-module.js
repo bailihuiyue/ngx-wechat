@@ -5272,9 +5272,9 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var RedEnvelopeComponent = /** @class */ (function () {
     function RedEnvelopeComponent() {
-        this.imgBack = "../../../assets/images/headers/back.png";
+        this.imgBack = "./assets/images/headers/back.png";
         this.backHref = "/index";
-        this.imgMore = "../../../assets/images/headers/more.png";
+        this.imgMore = "./assets/images/headers/more.png";
         this.hrefMore = "/more";
         this.styleMore = { 'position': 'absolute', 'top': '0', 'right': '0px' };
     }

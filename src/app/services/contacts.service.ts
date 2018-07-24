@@ -11,7 +11,7 @@ export class ContactsService {
 
   getUContact(): Observable<any> {
     return this.http.
-      get("/assets/data/contact.json").pipe(
+      get("./assets/data/contact.json").pipe(
         map(res => res.json()),
         catchError(error => of('getContact error:' + error))
       );

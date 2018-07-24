@@ -11,7 +11,7 @@ export class MomentsService {
 
   getMoments(): Observable<any> {
     return this.http.
-      get("/assets/data/moments.json").pipe(
+      get("./assets/data/moments.json").pipe(
         map(res => res.json()),
         catchError(error => of('getMoments error:'+ error))
       );

@@ -10,7 +10,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 })
 export class UserSettingComponent implements OnInit {
 
-  imgBack: string = "../../../assets/images/headers/back.png";
+  imgBack: string = "./assets/images/headers/back.png";
   backHref: string = "back";
   constructor(@Inject('BASE_CONFIG') private config, private router: Router, private activatedRoute: ActivatedRoute) { }
   imgBaseUrl: string = "";

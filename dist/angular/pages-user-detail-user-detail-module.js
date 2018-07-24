@@ -61,9 +61,9 @@ var UserDetailComponent = /** @class */ (function () {
         this.activatedRoute = activatedRoute;
         this.userService$ = userService$;
         //app-header-button
-        this.imgBack = "../../../assets/images/headers/back.png";
+        this.imgBack = "./assets/images/headers/back.png";
         this.userDetailHref = "back";
-        this.imgMore = "../../../assets/images/headers/more.png";
+        this.imgMore = "./assets/images/headers/more.png";
         this.hrefMore = "userDetailMore";
         this.styleMore = { 'position': 'absolute', 'top': '0', 'right': '0px' };
         this.id = "";

@@ -11,7 +11,7 @@ export class UsersService {
 
   getUsers(): Observable<any> {
     return this.http.
-      get("/assets/data/userData.json").pipe(
+      get("./assets/data/userData.json").pipe(
         map(res => res.json()),
         catchError(error => of('getUsers error:'+ error))
       );
@@ -19,7 +19,7 @@ export class UsersService {
 
   getChatDetail(): Observable<any> {
     return this.http.
-      get("/assets/data/chatDetail.json").pipe(
+      get("./assets/data/chatDetail.json").pipe(
         map(res => res.json()),
         catchError(error => of('getChatDetail error:' + error))
       );
@@ -27,7 +27,7 @@ export class UsersService {
 
   getUserDetail(): Observable<any> {
     return this.http.
-      get("/assets/data/userDetail.json").pipe(
+      get("./assets/data/userDetail.json").pipe(
         map(res => res.json()),
         catchError(error => of('getChatDetail error:' + error))
       );

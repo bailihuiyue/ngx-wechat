@@ -11,10 +11,10 @@ import { MomentsService } from '../../services/moments.service';
 })
 export class MomentsComponent implements OnInit {
 
-  imgBack: string = "../../../assets/images/headers/back.png";
+  imgBack: string = "./assets/images/headers/back.png";
   backHref: string = "back";
   styleBack = { 'background-color': 'transparent', 'position': 'absolute', 'top': '0', 'left': '0' };
-  imgCamera: string = "../../../assets/images/moments/camera.png";
+  imgCamera: string = "./assets/images/moments/camera.png";
   hrefCamera: string = "others";
   styleCamera = { 'position': 'absolute', 'top': '0', 'right': '0px', "background-color": "transparent" };
 
