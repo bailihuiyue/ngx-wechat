@@ -50,6 +50,7 @@ export class ChatListComponent implements OnInit {
       if (allUnread > 0) {
         //懒得使用jquery进行redux通知了,使用jquery直接操作dom
         $(".unread-tip").css("display", "block").text(allUnread);
+        localStorage.setItem("allUnread",allUnread.toString());
       }
       this.userList = zhidingArr.concat(nozhidingArr);
     });

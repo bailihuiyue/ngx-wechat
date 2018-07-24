@@ -19,7 +19,12 @@
     .page>div{
         height: 35px;
     }
-    .unread-tip{
-        left:60px;
+    .unread-wrap{
+        position: relative;
+        display: inline;
+        .unread-tip{
+            top: -15px;
+            left: 20px;
+        }
     }
 }

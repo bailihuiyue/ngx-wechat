@@ -66,8 +66,8 @@ export const leftInRightLeave = trigger('leftInRightLeave', [
 ]);
 
 export const changeCheckBoxStatus = trigger('changeCheckBoxStatus', [
-    state('uncheck', style({ "background-color": "#989898" })),
-    state('checked', style({ "background-color": "#1AAC19" })),
+    state('uncheck', style({ "backgroundColor": "#989898" })),
+    state('checked', style({ "backgroundColor": "#1AAC19" })),
     transition('uncheck => checked', [
         query('.chat-btn', animate(150, style({ 'transform': 'translateX(25px)' })), { optional: true }),
     ]),

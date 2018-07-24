@@ -10,11 +10,13 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class IndexFooterComponent implements OnInit {
   indexPage: string = "";
+  unread: number = 0;
   constructor(private store: Store<number>, private router: Router, private routeInfo: ActivatedRoute) { }
 
   ngOnInit() {
     let url = this.router.routerState.snapshot.url.split("/");
     this.indexPage = url[url.length - 1];
+    this.unread = parseInt(localStorage.getItem("allUnread"));
   }
 
   showPage(page) {

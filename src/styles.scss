@@ -5,6 +5,9 @@
 }
 a:active {color: black}
 a:visited {color: black }
+a:focus { outline: none; } 
+//去掉safari默认样式
+input {-webkit-appearance:none}
 .header{
     width:100%;
     height:50px;

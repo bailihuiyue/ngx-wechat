@@ -7,7 +7,7 @@ import { scaleTopLeftAnimation } from '../../anim/scale';
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
   styleUrls: ['./user-detail.component.scss'],
-  animations: [leftInRightLeave,scaleTopLeftAnimation],
+  animations: [leftInRightLeave, scaleTopLeftAnimation],
   host: { '[@leftInRightLeave]': '' }
 })
 export class UserDetailComponent implements OnInit {
@@ -16,7 +16,7 @@ export class UserDetailComponent implements OnInit {
 
   //app-header-button
   imgBack: string = "../../../assets/images/headers/back.png";
-  backHref: string = "back";
+  userDetailHref: string = "back";
   imgMore: string = "../../../assets/images/headers/more.png";
   hrefMore: string = "userDetailMore";
   styleMore = { 'position': 'absolute', 'top': '0', 'right': '0px' };
@@ -31,7 +31,7 @@ export class UserDetailComponent implements OnInit {
   userDetail: object = {};
   //放大头像
   showAvatar: boolean = false;
-  
+
   ngOnInit() {
     this.imgUrl = this.config.imgUrl;
     this.imgBaseUrl = this.config.imgBaseUrl;
@@ -68,11 +68,15 @@ export class UserDetailComponent implements OnInit {
     let ele = $(e.currentTarget), color, fontColor;
     if (ele.is(".album")) {
       color = "#FFFFFF";
-      this.router.navigateByUrl("/moments/" + this.id+"/"+this.name+"/"+this.avatar);
+      this.router.navigateByUrl("/moments/" + this.id + "/" + this.name + "/" + this.avatar);
     } else if (ele.is(".sendMsg")) {
       color = "#1AAC19";
       fontColor = "#fff";
-      window.history.back();
+      if(this.id==="me"){
+        this.router.navigateByUrl("userDetail/" + this.id + "/" + this.name + "/" + this.avatar);
+      }else{
+        this.router.navigateByUrl("chatDetail/" + this.id + "/" + this.name + "/" + this.avatar+"/0");
+      }
     } else if (ele.is(".call")) {
       color = "#fff";
       fontColor = "#000";

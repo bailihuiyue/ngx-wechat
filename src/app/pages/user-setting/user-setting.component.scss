@@ -19,9 +19,9 @@
         /*TODO:info:解决子元素margin-top影响父元素的问题*/
         padding: 1px 0;
         .userSetting{
-            height: 80px;
+            height: 100px;
             .avatar,.add{
-                width: 40px;
+                width: 60px;
                 margin-top: 10px;
                 margin-right: 20px;
                 border: 1px solid $wechat-foot-button-border-light;
@@ -35,10 +35,10 @@
             }
             .name{
                 height: 25px;
-                font-size: 12px;
+                font-size: 14px;
                 line-height: 25px;
                 text-align: center;
-                width: 40px;
+                width: 60px;
                 color: $wechat-foot-button-text;
             }
         }

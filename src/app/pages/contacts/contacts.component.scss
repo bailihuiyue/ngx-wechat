@@ -64,7 +64,9 @@
     /*媒体查询解决iphone4,5的a-z按钮栏过大导致显示不全问题*/
     @media screen and (max-height: 568px) {
         .touchbar{
-            transform: translateY(-50%) scale(0.9);
+            transform: translateY(-50%) scale(0.86);
+            transform-origin: "top right";
+            width: 40px;
         }
     }
     @media screen and (max-height: 480px) {
