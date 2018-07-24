@@ -9,10 +9,10 @@ import { scaleAndFade } from '../../anim/scale';
 })
 export class RedEnvelopeComponent implements OnInit {
 
-  imgBack: string = "../../../assets/images/headers/back.png";
+  imgBack: string = "/assets/images/headers/back.png";
   backHref: string = "/index";
 
-  imgMore: string = "../../../assets/images/headers/more.png";
+  imgMore: string = "s/assets/images/headers/more.png";
   hrefMore: string = "/more";
   styleMore = { 'position': 'absolute', 'top': '0', 'right': '0px' };
 

@@ -1,14 +1,14 @@
 <div class="chat-detail-footer">
-    <img class="voice" src="./assets/images/footer/{{voicePic}}.png" (click)="changeTxt()">
+    <img class="voice" src="/assets/images/footer/{{voicePic}}.png" (click)="changeTxt()">
     <div [hidden]="!isTalk" id="talk-wrap" class="talk">按住 说话</div>
     <div [hidden]="isTalk" class="text" id="footerIpt">
         <input #txt type="text" />
     </div>
-    <img class="more" src="./assets/images/footer/more.png" (click)="showMore()">
-    <img class="face" src="./assets/images/footer/{{emojiPic}}.png" (click)="showEmoji()">
+    <img class="more" src="/assets/images/footer/more.png" (click)="showMore()">
+    <img class="face" src="/assets/images/footer/{{emojiPic}}.png" (click)="showEmoji()">
     <div [hidden]="!showMicroPhone" class="center-css3 talk-microPhone">
         <div class="talk-microPhone-top">
-            <img src="./assets/images/voice.png" alt="">
+            <img src="/assets/images/voice.png" alt="">
             <div class="min-voice"></div>
         </div>
         <div class="text">手指上滑,取消发送</div>
@@ -16,7 +16,7 @@
 </div>
 <!-- 表情这块懒得做了,直接加载个图片了,所以取个名字叫lazy,鄙视自已一下下,😄 -->
 <div class="lazy" [ngStyle]="{'z-index':showEmojiPanel ? '1' : '0' }">
-    <img src="./assets/images/lazy.png" alt="">
+    <img src="/assets/images/lazy.png" alt="">
 </div>
 
 
@@ -28,7 +28,7 @@
             <div *ngFor="let btnArr of panelBtns;let i=index" class="panel-container clearfix" style="float:left;" [ngStyle]="{'height':height-40+'px','width':width+'px'}">
                 <div *ngFor="let btn of btnArr;let j=index">
                     <div class="box">
-                        <img (touchmove)="sildeMorePanel($event)" src="./assets/images/more-panel/{{btn&&btn[0]}}.png" (click)="showMsg($event)">
+                        <img (touchmove)="sildeMorePanel($event)" src="/assets/images/more-panel/{{btn&&btn[0]}}.png" (click)="showMsg($event)">
                         <div class="text">{{btn&&btn[1]}}</div>
                     </div>
                 </div>
