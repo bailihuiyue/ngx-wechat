@@ -1,6 +1,7 @@
 # ngx-wechat
 ## 一个基于angular6制作的高仿微信demo,基于微信6.6.7制作
 >技术：angular6，Redux，Router，WebPack , 依赖注入 ,懒加载,rxjs  ,动画等等
+
 ![图1](https://github.com/bailihuiyue/ngx-wechat/raw/master/thumb/1.png)
 ![图2](https://github.com/bailihuiyue/ngx-wechat/raw/master/thumb/2.png)
 ![图3](https://github.com/bailihuiyue/ngx-wechat/raw/master/thumb/3.png)
