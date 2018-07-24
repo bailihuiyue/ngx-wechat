@@ -1,0 +1,152 @@
+[
+    [
+        "A",
+        [
+            {
+                "avatar": "1.jpg",
+                "name": "ant",
+                "id":"ant"
+            },
+            {
+                "avatar": "8.jpg",
+                "name": "阿姨",
+                "id":"ay"
+            }
+        ]
+    ],
+    [
+        "B",
+        [
+            {
+                "avatar": "2.jpg",
+                "name": "白白",
+                "id":"bb"
+            },
+            {
+                "avatar": "5.jpg",
+                "name": "爸爸的爸爸叫什么",
+                "id":"bbb"
+            }
+        ]
+    ],
+    [
+        "C",
+        [
+            {
+                "avatar": "3.jpg",
+                "name": "陈小春",
+                "id":"cxc"
+            },
+            {
+                "avatar": "6.jpg",
+                "name": "蔡卫卫",
+                "id":"cww"
+            }
+        ]
+    ],
+    [
+        "D",
+        [
+            {
+                "avatar": "4.jpg",
+                "name": "大神",
+                "id":"ds"
+            },
+            {
+                "avatar": "10.jpg",
+                "name": "代吉星",
+                "id":"djx"
+            }
+        ]
+    ],
+    [
+        "E",
+        [
+            {
+                "avatar": "5.jpg",
+                "name": "二哥",
+                "id":"eg"
+            }
+        ]
+    ],
+    [
+        "F",
+        [
+            {
+                "avatar": "6.jpg",
+                "name": "福特",
+                "id":"ft"
+            }
+        ]
+    ],
+    [
+        "G",
+        [
+            {
+                "avatar": "7.jpg",
+                "name": "盖世",
+                "id":"gs"
+            }
+        ]
+    ],
+    [
+        "H",
+        [
+            {
+                "avatar": "8.jpg",
+                "name": "好命先生",
+                "id":"me"
+            },
+            {
+                "avatar": "8.jpg",
+                "name": "韩立",
+                "id":"hl"
+            }
+        ]
+    ],
+    [
+        "J",
+        [
+            {
+                "avatar": "9.jpg",
+                "name": "江俊杰",
+                "id":"jjj"
+            }
+        ]
+    ],
+    [
+        "K",
+        [
+            {
+                "avatar": "1.jpg",
+                "name": "科技",
+                "id":"kj"
+            }
+        ]
+    ],
+    [
+        "L",
+        [
+            {
+                "avatar": "2.jpg",
+                "name": "亮亮",
+                "id":"ll"
+            }
+        ]
+    ],
+    [
+        "Z",
+        [
+            {
+                "avatar": "2.jpg",
+                "name": "朱元璋",
+                "id":"zyz"
+            },
+            {
+                "avatar": "1.jpg",
+                "name": "张三",
+                "id":"zhangsan"
+            }
+        ]
+    ]
+]
