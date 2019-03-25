@@ -18,4 +18,6 @@
 
 ### 第一次使用angular开发项目,可能有不尽人意的地方,欢迎各位大侠拍砖,我一定会尽力修改代码中不好的地方,希望能和大家一起进步
 
-### 已经上传node_modules依赖包,防止依赖包版本升级导致项目运行出错
+##### ~~已经上传node_modules依赖包,~~防止依赖包版本升级导致项目运行出错
+
+##### 下载node_modules包请移步:https://github.com/bailihuiyue/node-packages/blob/master/ngx-wechat.rar
